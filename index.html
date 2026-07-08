@@ -68,6 +68,10 @@
   .node.impact{padding:16px 14px;font-size:13px;}
   .node.impact .tt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
 
+  .kpiwrap{display:flex;margin-top:7px;flex-wrap:wrap;gap:4px;}
+  .kpi{display:inline-block;background:var(--gold);border:1px solid #d79a14;color:#3d2e00;font-size:10.5px;font-weight:800;border-radius:6px;padding:4px 8px;line-height:1.35;box-shadow:0 1px 2px rgba(215,154,20,.3);}
+  #panelKpis{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px;}
+
   .dimmed .node{opacity:.18;}
   .dimmed .node.lit{opacity:1;box-shadow:0 2px 10px rgba(7,75,124,.22);}
   .dimmed .band{opacity:.25;}
@@ -108,6 +112,7 @@
     .node{font-size:13px;padding:11px 13px;}
     .node .ds{font-size:12px;}
     .node.impact{font-size:14px;padding:16px 14px;}
+    .kpi{font-size:11px;}
 
     /* Detalle como hoja inferior de ancho completo */
     #panel{left:10px;right:10px;width:auto;max-height:52vh;bottom:10px;}
@@ -118,6 +123,7 @@
     .sheet{border:none;box-shadow:none;min-width:0;max-width:100%;}
     .hint,button.tgl,#panel{display:none !important;}
     .node .ds{display:block;}
+    .kpiwrap{display:flex;}
   }
 </style>
 </head>
@@ -139,6 +145,7 @@
     <span class="lg"><span class="chip kt"></span> Transversal</span>
     <span class="lg"><span class="chip kn"></span> Insumos / convergencia</span>
     <span class="lg"><span class="chip kg"></span> Impacto</span>
+    <span class="lg"><span class="kpi">KPI</span> Meta a 3 años</span>
     <button class="tgl" id="toggleDesc">Mostrar descripciones</button>
     <span class="hint">Haz clic en un nodo para ver su detalle y seguir su cadena causal · clic fuera para restablecer</span>
   </div>
@@ -204,13 +211,13 @@
 
       <div class="col" id="col-r">
         <div class="colhead">Outcomes a 3 años</div>
-        <div class="node nr" id="R1" data-fuente="§2 OE1, §3, §10.2"><span class="tt">Las organizaciones de apoyo acompañan a más y mejores emprendedores</span><span class="tx">Las 30 OAE fortalecidas elevan sus capacidades —medidas de línea base a cierre— y operan modelos de formación modernizados, medidos y financiables, listos para replicarse en ecosistemas más incipientes.</span></div>
-        <div class="node nr" id="R2" data-fuente="§10.2"><span class="tt">Los emprendedores formados ponen en marcha negocios nuevos</span><span class="tx">1,500 emprendimientos inician operaciones a partir de los programas de formación financiados por la convocatoria.</span></div>
-        <div class="node nr" id="R3" data-fuente="§2 OE2, §3"><span class="tt">Los actores de cada ciudad trabajan articulados en torno a una agenda común</span><span class="tx">Se apropian de los datos del diagnóstico, co-crean la solución a los retos y debilidades de su ecosistema y la sostienen en operación; los participantes conservan la red y la capacidad de diseño para seguir colaborando.</span></div>
-        <div class="node nr" id="R4" data-fuente="§3, §10.2"><span class="tt">El ecosistema moviliza y compromete capital local</span><span class="tx">Los aliados de las organizaciones aportan contraparte de dos a uno o más en el Componente 1, los actores del ecosistema y los gobiernos aportan uno a uno en los Componentes 2 y 3, y esa inversión local empieza a convertirse en negocios en el territorio.</span></div>
-        <div class="node nr" id="R5" data-fuente="§2 OE3, §3"><span class="tt">Los micronegocios mejoran su gestión y su productividad</span><span class="tx">Con capacitación aplicada y un primer capital productivo en especie, mejoran sus procesos, avanzan hacia la formalización y crecen.</span></div>
-        <div class="node nr" id="R6" data-fuente="§10.1"><span class="tt">Los negocios apoyados incrementan sus ventas 15% en promedio</span><span class="tx">Medido antes y después de cada intervención.</span></div>
-        <div class="node nr" id="R7" data-fuente="§10.1"><span class="tt">Los negocios generan ingreso y empleo, con participación de las mujeres</span><span class="tx">52,500 empleos en los negocios apoyados directamente (incluido el autoempleo) y 7,500 en los indirectos; la mitad ocupados por mujeres, y los negocios liderados por mujeres alcanzan el 55% de los directos y el 50% de los indirectos.</span></div>
+        <div class="node nr" id="R1" data-fuente="§2 OE1, §3, §10.2"><span class="tt">Las organizaciones de apoyo acompañan a más y mejores emprendedores</span><span class="tx">Las 30 OAE fortalecidas elevan sus capacidades —medidas de línea base a cierre— y operan modelos de formación modernizados, medidos y financiables, listos para replicarse en ecosistemas más incipientes.</span><span class="kpiwrap"><span class="kpi">KPI · 30 OAE fortalecidas (SCALE), de línea base a cierre</span></span></div>
+        <div class="node nr" id="R2" data-fuente="§10.2"><span class="tt">Los emprendedores formados ponen en marcha negocios nuevos</span><span class="tx">1,500 emprendimientos inician operaciones a partir de los programas de formación financiados por la convocatoria.</span><span class="kpiwrap"><span class="kpi">KPI · 1,500 negocios nuevos creados (~500 por edición × 3)</span></span></div>
+        <div class="node nr" id="R3" data-fuente="§2 OE2, §3"><span class="tt">Los actores de cada ciudad trabajan articulados en torno a una agenda común</span><span class="tx">Se apropian de los datos del diagnóstico, co-crean la solución a los retos y debilidades de su ecosistema y la sostienen en operación; los participantes conservan la red y la capacidad de diseño para seguir colaborando.</span><span class="kpiwrap"><span class="kpi">KPI · 12 laboratorios facilitados hasta una solución financiada</span></span></div>
+        <div class="node nr" id="R4" data-fuente="§3, §10.2"><span class="tt">El ecosistema moviliza y compromete capital local</span><span class="tx">Los aliados de las organizaciones aportan contraparte de dos a uno o más en el Componente 1, los actores del ecosistema y los gobiernos aportan uno a uno en los Componentes 2 y 3, y esa inversión local empieza a convertirse en negocios en el territorio.</span><span class="kpiwrap"><span class="kpi">KPI · Contraparte movilizada: ≥2:1 en C1 · 1:1 en C2 y C3</span><span class="kpi">KPI · 18 convenios estatales de coinversión</span></span></div>
+        <div class="node nr" id="R5" data-fuente="§2 OE3, §3"><span class="tt">Los micronegocios mejoran su gestión y su productividad</span><span class="tx">Con capacitación aplicada y un primer capital productivo en especie, mejoran sus procesos, avanzan hacia la formalización y crecen.</span><span class="kpiwrap"><span class="kpi">KPI · 21,000 negocios apoyados directamente (11,550 liderados por mujeres)</span><span class="kpi">KPI · 2,250 micronegocios con capital semilla en especie</span></span></div>
+        <div class="node nr" id="R6" data-fuente="§10.1"><span class="tt">Los negocios apoyados incrementan sus ventas 15% en promedio</span><span class="tx">Medido antes y después de cada intervención.</span><span class="kpiwrap"><span class="kpi">KPI · 15% de crecimiento en ventas, promedio de todos los componentes</span></span></div>
+        <div class="node nr" id="R7" data-fuente="§10.1"><span class="tt">Los negocios generan ingreso y empleo, con participación de las mujeres</span><span class="tx">52,500 empleos en los negocios apoyados directamente (incluido el autoempleo) y 7,500 en los indirectos; la mitad ocupados por mujeres, y los negocios liderados por mujeres alcanzan el 55% de los directos y el 50% de los indirectos.</span><span class="kpiwrap"><span class="kpi">KPI · 52,500 empleos directos (26,250 ocupados por mujeres)</span><span class="kpi">KPI · 7,500 empleos indirectos (3,750 ocupados por mujeres)</span><span class="kpi">KPI · 1,875 negocios indirectos (938 liderados por mujeres)</span></span></div>
       </div>
 
       <div class="col" id="col-l">
@@ -229,7 +236,7 @@
     </div>
   </div>
 
-  <div id="panel"><button class="cls" id="panelClose">×</button><h3 id="panelTitle"></h3><p id="panelBody"></p></div>
+  <div id="panel"><button class="cls" id="panelClose">×</button><h3 id="panelTitle"></h3><p id="panelBody"></p><div id="panelKpis"></div></div>
 
   <footer class="foot">
     Estrategia de Emprendimiento (Fundación Coppel · ANDE) · Teoría de cambio, cadena causal completa · Elaborada a partir del Documento madre V3 (v0.6, julio 2026), única fuente; sin contenidos inferidos. Los supuestos de cada enlace y el manejo de riesgos se desarrollan en las Secciones 3 y 11 del documento madre.
@@ -319,6 +326,8 @@
     var tt=node.querySelector(".tt").textContent;
     var body=node.querySelector(".ds")||node.querySelector(".tx");
     pT.textContent=tt; pB.textContent=body?body.textContent:"";
+    var pK=document.getElementById("panelKpis"); pK.innerHTML="";
+    node.querySelectorAll(".kpi").forEach(function(k){ var s=document.createElement("span"); s.className="kpi"; s.textContent=k.textContent; pK.appendChild(s); });
     panel.classList.add("on");
   }
   document.querySelectorAll(".node").forEach(function(n){
