@@ -24,7 +24,7 @@
   *{box-sizing:border-box;}
   html,body{margin:0;}
   body{background:#f4f7fa;color:var(--ink);font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;line-height:1.4;padding:26px 18px;}
-  .sheet{min-width:1560px;max-width:1780px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 30px 22px;box-shadow:0 1px 3px rgba(7,75,124,.06);}
+  .sheet{min-width:0;width:100%;max-width:1780px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 30px 22px;box-shadow:0 1px 3px rgba(7,75,124,.06);}
   header.head{border-bottom:3px solid var(--gold);padding-bottom:12px;margin-bottom:12px;}
   .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:0 0 4px;}
   h1{font-size:22px;margin:0;color:var(--teal);font-weight:800;}
@@ -80,7 +80,8 @@
 
   footer.foot{margin-top:18px;border-top:1px solid var(--line);padding-top:10px;font-size:11.5px;color:var(--muted);}
 
-  /* ===== Responsive · Nivel 1: teléfono y tablet en vertical -> apilado vertical ===== */
+  /* ===== Responsive: las 6 columnas se angostan de forma fluida al reducir el ancho;
+     en teléfono y tablet en vertical se apilan en una sola columna ===== */
   @media (max-width:932px), (orientation:portrait) and (max-width:1400px){
     body{padding:14px 10px;}
     .sheet{min-width:0;max-width:100%;width:100%;padding:18px 15px 20px;}
@@ -110,25 +111,6 @@
 
     /* Detalle como hoja inferior de ancho completo */
     #panel{left:10px;right:10px;width:auto;max-height:52vh;bottom:10px;}
-  }
-
-  /* ===== Responsive · Nivel 2 (intermedio): tablet/laptop en horizontal -> rejilla 3x2 ===== */
-  /* Entre el móvil apilado y el diagrama completo de 6 columnas: las seis etapas
-     se distribuyen en una rejilla de 3 columnas (fila 1: Insumos, Actividades,
-     Outputs · fila 2: Outcomes 3 años, Outcomes largo plazo, Impacto), sin scroll
-     horizontal. Se ocultan los conectores; el resaltado de cadena se conserva. */
-  @media (min-width:933px) and (max-width:1559px) and (orientation:landscape){
-    body{padding:22px 16px;}
-    .sheet{min-width:0;max-width:100%;width:100%;padding:24px 22px 20px;}
-    .causal{max-width:none;}
-
-    .wrap{position:static;}
-    svg#edges{display:none;}
-    .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 22px;align-items:start;}
-    .col{gap:8px;}
-    .colhead{margin-top:8px;}
-    .node{font-size:12.2px;}
-    #panel{width:340px;}
   }
 
   @media print{
