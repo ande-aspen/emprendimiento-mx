@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teoría de cambio · Cadena causal completa · Estrategia de Emprendimiento · Fundación Coppel · ANDE</title>
+<!--
+  METADATO INTERNO (no visible) — Fuente única: Project Narrative/01_Estrategia_Emprendimiento_Documento_Madre_V3.md (v0.6, jul-2026).
+  Cada nodo lleva su referencia en el atributo data-fuente. Sin contenidos inferidos.
+  Construido por fases con OK de Pedro: Insumos (6) · Actividades (16) · Outputs (13) · Outcomes 3 años (7) · Outcomes largo plazo (4) · Impacto (1).
+-->
+<style>
+  :root{
+    --teal:#074B7C; --gold:#FEB728; --blue:#18B0DE;
+    --ink:#1c2b36; --muted:#5b6b78; --mist:#eef3f7; --line:#d7e0e8; --paper:#ffffff;
+    --c1:#eaf7fc; --c1a:#18B0DE; --c1t:#0b6f8c;
+    --c2:#fdf3dc; --c2a:#FEB728; --c2t:#8a6206;
+    --c3:#e8eef5; --c3a:#074B7C; --c3t:#074B7C;
+    --tr:#f0eef7;  --tra:#7d6fae; --trt:#584a8f;
+    --neu:#f2f5f8; --neua:#9db2c2;
+    --res:#eef3f7; --resa:#074B7C;
+    --green:#E6F3DC; --green-acc:#A9D08E; --green-ink:#2E5621; --green-lbl:#3F7A2E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#f4f7fa;color:var(--ink);font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;line-height:1.4;padding:26px 18px;}
+  .sheet{min-width:1560px;max-width:1780px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 30px 22px;box-shadow:0 1px 3px rgba(7,75,124,.06);}
+  header.head{border-bottom:3px solid var(--gold);padding-bottom:12px;margin-bottom:12px;}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:0 0 4px;}
+  h1{font-size:22px;margin:0;color:var(--teal);font-weight:800;}
+  .causal{font-size:13px;color:var(--ink);margin:9px 0 0;font-style:italic;line-height:1.5;max-width:1100px;}
+  .pop{font-size:12.5px;color:var(--muted);margin:0 0 12px;background:var(--mist);border-left:4px solid var(--blue);border-radius:5px;padding:8px 13px;}
+  .pop b{color:var(--teal);}
+  .bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:12px 0 14px;font-size:12px;}
+  .bar .lg{display:inline-flex;align-items:center;gap:6px;color:var(--muted);}
+  .chip{width:13px;height:13px;border-radius:3px;display:inline-block;border:1px solid transparent;}
+  .chip.k1{background:var(--c1);border-color:var(--c1a);}
+  .chip.k2{background:var(--c2);border-color:var(--c2a);}
+  .chip.k3{background:var(--c3);border-color:var(--c3a);}
+  .chip.kt{background:var(--tr);border-color:var(--tra);}
+  .chip.kn{background:var(--neu);border-color:var(--neua);}
+  .chip.kg{background:var(--green);border-color:var(--green-acc);}
+  .hint{color:var(--muted);font-size:11.5px;margin-left:auto;}
+  button.tgl{border:1px solid var(--line);background:#fff;color:var(--teal);font-weight:700;font-size:11.5px;border-radius:6px;padding:5px 10px;cursor:pointer;}
+  button.tgl:hover{background:var(--mist);}
+
+  .wrap{position:relative;}
+  svg#edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+  .flow{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:26px;align-items:start;}
+  .col{display:flex;flex-direction:column;gap:8px;}
+  .colhead{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);text-align:center;padding:4px 0 6px;border-bottom:2px solid var(--line);margin-bottom:4px;}
+  .band{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin:8px 0 0;padding:2px 4px;}
+  .band.b1{color:var(--c1t);} .band.b2{color:var(--c2t);} .band.b3{color:var(--c3t);} .band.bt{color:var(--trt);}
+
+  .node{border-radius:8px;padding:9px 11px;border:1px solid var(--line);font-size:11.8px;background:var(--neu);cursor:pointer;transition:box-shadow .15s,opacity .2s,transform .12s;}
+  .node:hover{box-shadow:0 2px 8px rgba(7,75,124,.18);transform:translateY(-1px);}
+  .node .tt{font-weight:800;display:block;color:var(--teal);}
+  .node .tx{display:block;margin-top:4px;color:var(--ink);}
+  .node .ds{display:none;margin-top:5px;color:var(--muted);font-size:11px;line-height:1.45;}
+  .showdesc .node .ds{display:block;}
+  .node.n1{background:var(--c1);border-color:var(--c1a);} .node.n1 .tt{color:var(--c1t);}
+  .node.n2{background:var(--c2);border-color:var(--c2a);} .node.n2 .tt{color:var(--c2t);}
+  .node.n3{background:var(--c3);border-color:#b9c9d9;} .node.n3 .tt{color:var(--c3t);}
+  .node.nt{background:var(--tr);border-color:var(--tra);} .node.nt .tt{color:var(--trt);}
+  .node.nr{background:var(--res);border-color:#c5d4e0;}
+  .node.ng{background:var(--green);border-color:var(--green-acc);} .node.ng .tt{color:var(--green-lbl);}
+  .node.ng .tx{color:var(--green-ink);font-weight:700;}
+  .node.impact{padding:16px 14px;font-size:13px;}
+  .node.impact .tt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
+
+  .dimmed .node{opacity:.18;}
+  .dimmed .node.lit{opacity:1;box-shadow:0 2px 10px rgba(7,75,124,.22);}
+  .dimmed .band{opacity:.25;}
+
+  #panel{position:fixed;right:18px;bottom:18px;width:360px;max-height:56vh;overflow:auto;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:9px;box-shadow:0 6px 24px rgba(7,75,124,.22);padding:14px 16px;z-index:50;display:none;font-size:12.5px;}
+  #panel.on{display:block;}
+  #panel h3{margin:0 0 6px;font-size:13.5px;color:var(--teal);}
+  #panel p{margin:0;color:var(--ink);line-height:1.5;}
+  #panel .cls{float:right;border:none;background:none;font-size:15px;color:var(--muted);cursor:pointer;font-weight:700;}
+
+  footer.foot{margin-top:18px;border-top:1px solid var(--line);padding-top:10px;font-size:11.5px;color:var(--muted);}
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{border:none;box-shadow:none;min-width:0;max-width:100%;}
+    .hint,button.tgl,#panel{display:none !important;}
+    .node .ds{display:block;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header class="head">
+    <p class="eyebrow">Estrategia de Emprendimiento · Fundación Coppel · ANDE</p>
+    <h1>Teoría de cambio · Cadena causal completa</h1>
+    <p class="causal">Si las organizaciones que acompañan al emprendedor se profesionalizan, los actores de cada región co-crean la solución a los retos de su ecosistema y los micronegocios reciben capacidades y un primer capital, entonces el ecosistema convierte la inversión en negocios, porque la apropiación local y la información verificable reducen el costo y el riesgo de invertir en él.</p>
+  </header>
+
+  <p class="pop"><b>Beneficiarios:</b> los emprendedores y los micronegocios de las ciudades intermedias y, a través de ellos, sus familias y comunidades. Las organizaciones de apoyo y los actores del ecosistema son beneficiarios intermedios.</p>
+
+  <div class="bar">
+    <span class="lg"><span class="chip k1"></span> C1 · Fortalecimiento de Organizaciones</span>
+    <span class="lg"><span class="chip k2"></span> C2 · Desarrollo de Ecosistemas</span>
+    <span class="lg"><span class="chip k3"></span> C3 · Apoyo a Pequeños negocios</span>
+    <span class="lg"><span class="chip kt"></span> Transversal</span>
+    <span class="lg"><span class="chip kn"></span> Insumos / convergencia</span>
+    <span class="lg"><span class="chip kg"></span> Impacto</span>
+    <button class="tgl" id="toggleDesc">Mostrar descripciones</button>
+    <span class="hint">Haz clic en un nodo para ver su detalle y seguir su cadena causal · clic fuera para restablecer</span>
+  </div>
+
+  <div class="wrap" id="wrap">
+    <svg id="edges"></svg>
+    <div class="flow" id="flow">
+
+      <div class="col" id="col-i">
+        <div class="colhead">Insumos</div>
+        <div class="node nn" id="I1" data-fuente="§9, §12.1"><span class="tt">Capital filantrópico</span><span class="tx">Fundación Coppel aporta USD $1,636,000 y conserva la decisión sobre su asignación; Fundación Visa aporta USD $1,000,000 (solicitud a 36 meses). Es el capital catalítico que activa las convocatorias, los laboratorios y el capital semilla.</span></div>
+        <div class="node nn" id="I2" data-fuente="§7, §12.1"><span class="tt">Coinversión pública</span><span class="tx">Los gobiernos locales (estatales o municipales) coinvierten peso a peso el capital semilla: USD $660,000 en los tres años, con convenios anuales.</span></div>
+        <div class="node nn" id="I3" data-fuente="§5, §6, §12.1"><span class="tt">Contraparte local del ecosistema</span><span class="tx">Las organizaciones participantes y sus aliados (universidades, gobiernos, empresas) aportan contraparte 1:1 a los proyectos financiados: USD $674,157 en la convocatoria del C1, más la contraparte que moviliza cada laboratorio.</span></div>
+        <div class="node nn" id="I4" data-fuente="§3, §4-T.1, §5, §6, §9"><span class="tt">Método y conocimiento de ANDE</span><span class="tx">El diagnóstico de ecosistemas (siete dominios, cinco tipos de actor, cuatro niveles de madurez), levantado en diez ciudades intermedias como línea base común; la metodología de diseño participativo de MIT D-Lab; el marco SCALE y las valoraciones iniciales de capacidades; y el marco de medición y seguimiento.</span></div>
+        <div class="node nn" id="I5" data-fuente="§7, §5, T.3"><span class="tt">Plataformas tecnológicas</span><span class="tx">Coppel Emprende (capacitación gratuita en línea, más de cien lecciones, alcance nacional) y andeimpact.org (reporte y trazabilidad de resultados), con landing pages y dashboards por estado.</span></div>
+        <div class="node nn" id="I6" data-fuente="§9, §5"><span class="tt">Capacidad institucional y alianzas</span><span class="tx">Los equipos de Fundación Coppel y ANDE; FUNDES como socio operativo del Componente 3; las OSC ejecutoras y donatarias en territorio; y el padrón de organizaciones elegibles que Coppel y ANDE integran y actualizan.</span></div>
+      </div>
+
+      <div class="col" id="col-a">
+        <div class="colhead">Actividades</div>
+        <div class="band b1">C1 · Emprender para crecer</div>
+        <div class="node n1" id="A1a" data-fuente="§5, act. 1.1–1.4"><span class="tt">Convocatoria anual de dos vías: diseño, invitación, evaluación y selección</span><span class="ds">Fundación Coppel financia la bolsa y define los estados prioritarios de cada edición, que ponderan a favor sin excluir al resto del país. Se invita a las organizaciones del padrón que Coppel y ANDE integran, y un comité evalúa a ciegas con entrevistas de calibración para seleccionar alrededor de diez organizaciones por edición, tres ediciones (2026–2028), con subvención de hasta la mitad del costo y contraparte 1:1.</span></div>
+        <div class="node n1" id="A1b" data-fuente="§5, act. 1.5"><span class="tt">Implementación de proyectos · Vía 1 Impulso al emprendimiento</span><span class="ds">La organización imparte su programa de formación de emprendimientos: al menos tres elementos entre habilidades, mentorías, entrenamiento especializado, modelo financiero, financiamiento, acceso a mercados y capital social, con duración mínima de tres meses, al menos 50 emprendedores y diagnóstico de entrada y salida. Puede incluir capital semilla para los participantes (hasta el 50% del costo, preferentemente en especie) y se complementa con el módulo Punto Cero de Coppel Emprende. Hasta $500,000 MXN por proyecto, implementado en doce meses.</span></div>
+        <div class="node n1" id="A1c" data-fuente="§5, act. 1.6"><span class="tt">Implementación de proyectos · Vía 2 Fortalecimiento de organizaciones</span><span class="ds">La organización ejecuta un proyecto para modernizar, actualizar, fortalecer o medir su modelo de formación de emprendedores ya existente, con capacitación, asistencia técnica y acompañamiento. El proyecto prepara el modelo para su potencial réplica en ecosistemas más incipientes. Hasta $450,000 MXN por proyecto.</span></div>
+        <div class="node n1" id="A1d" data-fuente="§5, act. 1.7–1.8"><span class="tt">Acompañamiento de ANDE y medición en andeimpact.org</span><span class="ds">ANDE valora el punto de partida de cada organización y la acompaña durante toda la implementación con el marco SCALE, con apoyo en métricas, procuración de fondos, gobernanza, institucionalización y comunicación. La organización reporta en andeimpact.org a medio término, al cierre y cuatro meses después de concluir; la plataforma da trazabilidad a las startups incubadas y a las empresas escalables aceleradas.</span></div>
+        <div class="band b2">C2 · Laboratorios de acción</div>
+        <div class="node n2" id="A2a" data-fuente="§6, act. 2.1–2.2"><span class="tt">Preparación del laboratorio y socialización del diagnóstico</span><span class="ds">Un comité asesor local (3 a 6 referentes de la ciudad) delimita el reto con base en el diagnóstico y ayuda a reclutar, por invitación, de 4 a 10 organizaciones del ecosistema. En la primera reunión presencial ANDE presenta los hallazgos del diagnóstico, los actores se reconocen en sus propios datos y construyen una visión común del reto.</span></div>
+        <div class="node n2" id="A2b" data-fuente="§6, act. 2.3"><span class="tt">Facilitación del ciclo de diseño participativo</span><span class="ds">ANDE facilita alrededor de nueve sesiones con la metodología de MIT D-Lab, en cinco fases: aprender, imaginar, crear, probar y sintetizar, a lo largo de seis a doce meses. El trabajo real ocurre entre sesiones, dentro de las organizaciones participantes. Doce laboratorios en los tres años, cuatro por año.</span></div>
+        <div class="node n2" id="A2c" data-fuente="§6, act. 2.4–2.5"><span class="tt">Selección entre pares y entrega del financiamiento a la mejor solución</span><span class="ds">Los equipos presentan sus soluciones y los propios participantes seleccionan entre pares la más prometedora, con rúbrica predefinida; al comité se puede invitar a financiadores aliados. El millón de pesos (MXN), asegurado desde el inicio, se entrega al final al grupo ganador vía su donataria o una donataria anfitriona del ecosistema, y se activa la contraparte 1:1.</span></div>
+        <div class="node n2" id="A2d" data-fuente="§6, act. 2.6–2.7"><span class="tt">Implementación de la solución y documentación del ciclo</span><span class="ds">El grupo ganador ejecuta la solución (por ejemplo, un club de ángeles inversionistas o un mecanismo de colaboración entre instituciones). Se miden los resultados sobre la línea base del diagnóstico y cada ciudad produce un learning brief que alimenta a las demás.</span></div>
+        <div class="band b3">C3 · Coppel Emprende y capital semilla</div>
+        <div class="node n3" id="A3a" data-fuente="§7, act. 3.1"><span class="tt">Operación continua de la plataforma Coppel Emprende</span><span class="ds">Capacitación gratuita, en línea y de alcance nacional, abierta a cualquier micronegocio que se registre: más de cien lecciones breves de gestión, digitalización y medios de pago, webinars en vivo, comunidad e incentivos por avance. Corre de forma continua los 36 meses, con meta de 21,000 microempresarios inscritos.</span></div>
+        <div class="node n3" id="A3b" data-fuente="§7, act. 3.2–3.4"><span class="tt">Convenios estatales de coinversión peso a peso</span><span class="ds">El gobierno del estado postula su proyecto, firma el convenio, compromete el presupuesto que se coinvierte peso a peso con Fundación Coppel (hasta $500,000 MXN por cohorte) y designa a la OSC operadora. La OSC se da de alta en el portal de aliados y elabora con el gobierno y la Fundación el presupuesto de la cohorte antes de abrir la convocatoria. 18 cohortes estatales en los tres años, con convocatorias anuales.</span></div>
+        <div class="node n3" id="A3c" data-fuente="§7, act. 3.5–3.7"><span class="tt">Convocatoria estatal, selección y entrega del capital semilla en especie</span><span class="ds">La OSC difunde la convocatoria estatal y selecciona, con un diagnóstico homologado de necesidades, entre los micronegocios en operación (1 a 10 trabajadores) que completaron el primer nivel de capacitación (41 lecciones). El capital se entrega en especie —equipo, herramientas e insumos comprados en establecimientos formales— hasta $8,000 MXN por negocio, con un mínimo de 100 micronegocios por cohorte.</span></div>
+        <div class="node n3" id="A3d" data-fuente="§7, act. 3.8–3.9"><span class="tt">Comprobación, seguimiento y habilitación técnica</span><span class="ds">La OSC comprueba con un informe final en el portal de aliados (base de beneficiarios, diagnósticos, montos y apoyos); hasta el 35% del recurso de Coppel puede destinarse a su operación. Fundación Coppel y su socio operativo dan seguimiento periódico y habilitan por estado una landing page de Coppel Emprende con su dashboard.</span></div>
+        <div class="band bt">Transversales</div>
+        <div class="node nt" id="AT1" data-fuente="§4, T.1"><span class="tt">Levantar y actualizar el diagnóstico de ecosistemas</span><span class="ds">ANDE aplica el modelo de diagnóstico (siete dominios, cinco tipos de actor, cuatro niveles de madurez), línea base común de los tres componentes. Ya está levantado en diez ciudades intermedias y se extiende a ciudades nuevas conforme maduran.</span></div>
+        <div class="node nt" id="AT2" data-fuente="§4, T.2"><span class="tt">Administrar las subvenciones y verificar las contrapartes</span><span class="ds">Firmar los convenios de cada componente, ministrar los recursos, valorar las aportaciones en especie y comprobar la contraparte 1:1 de cada proyecto. Fundación Coppel aporta el capital y conserva la decisión de asignación.</span></div>
+        <div class="node nt" id="AT3" data-fuente="§4, T.3"><span class="tt">Medir y reportar la estrategia completa</span><span class="ds">ANDE consolida los indicadores de los tres componentes en la tabla única, desagrega negocios y empleos por sexo, y produce los reportes de medio término (año 2) y cierre (año 3).</span></div>
+        <div class="node nt" id="AT4" data-fuente="§4, T.4"><span class="tt">Re-diagnosticar, publicar aprendizajes y entregar</span><span class="ds">Al cierre, ANDE re-diagnostica cada ciudad para medir su avance de madurez, publica los learning briefs y entrega el trabajo a los actores locales, que quedan como dueños.</span></div>
+      </div>
+
+      <div class="col" id="col-o">
+        <div class="colhead">Outputs</div>
+        <div class="band b1">C1</div>
+        <div class="node n1" id="O11" data-fuente="§5, §10.2"><span class="tt">30 OAE seleccionadas y financiadas</span><span class="tx">En tres ediciones de la convocatoria (~10 por edición, pueden repetir), con la contraparte 1:1 de sus aliados locales activada.</span></div>
+        <div class="node n1" id="O12" data-fuente="§5"><span class="tt">Programas de formación de la Vía 1 impartidos</span><span class="tx">Cada proyecto forma al menos 50 emprendedores, con diagnóstico de entrada y salida; una parte de los emprendimientos participantes recibe capital semilla, preferentemente en especie, dentro del programa.</span></div>
+        <div class="node n1" id="O13" data-fuente="§5"><span class="tt">Modelos de formación de la Vía 2 modernizados</span><span class="tx">Modelos actualizados, fortalecidos o medidos, preparados para su potencial réplica en ecosistemas más incipientes.</span></div>
+        <div class="node n1" id="O14" data-fuente="§5, §10.1"><span class="tt">675 negocios alcanzados vía las organizaciones fortalecidas</span><span class="tx">~22 por OAE, con trazabilidad reportada en andeimpact.org y un aprendizaje documentado por ciclo que alimenta las convocatorias siguientes.</span></div>
+        <div class="band b2">C2</div>
+        <div class="node n2" id="O21" data-fuente="§6, §10.2"><span class="tt">12 Laboratorios de acción facilitados</span><span class="tx">Cuatro por año, cada uno con 4 a 10 organizaciones de la ciudad convocadas y una visión común del reto construida sobre los datos del diagnóstico.</span></div>
+        <div class="node n2" id="O22" data-fuente="§6, §10.1"><span class="tt">12 soluciones co-creadas, seleccionadas entre pares y financiadas</span><span class="tx">Con un millón de pesos más contraparte 1:1, en operación en su ciudad (por ejemplo, un club de ángeles o un mecanismo de colaboración), alcanzando 1,200 negocios (100 por solución).</span></div>
+        <div class="node n2" id="O23" data-fuente="§6"><span class="tt">Capacidades y productos del laboratorio retenidos</span><span class="tx">Todos los participantes conservan red, prototipo, capacidad de diseño y diagnóstico, y cada ciudad produce un learning brief que alimenta a las demás.</span></div>
+        <div class="band b3">C3</div>
+        <div class="node n3" id="O31" data-fuente="§7, §10.1"><span class="tt">21,000 microempresarios inscritos en Coppel Emprende</span><span class="tx">Capacitación gratuita disponible a escala nacional; el 16% completa el primer nivel (41 lecciones), la base de la que cada cohorte selecciona.</span></div>
+        <div class="node n3" id="O32" data-fuente="§7, §10.2"><span class="tt">18 convenios estatales de coinversión firmados</span><span class="tx">Con presupuesto peso a peso comprometido y OSC operadora designada por cada gobierno.</span></div>
+        <div class="node n3" id="O33" data-fuente="§7, §10.2"><span class="tt">2,250 micronegocios reciben capital semilla en especie</span><span class="tx">Equipo, herramientas e insumos, hasta $8,000 MXN por negocio, mínimo 100 por cohorte.</span></div>
+        <div class="node n3" id="O34" data-fuente="§7"><span class="tt">Infraestructura de seguimiento habilitada por estado</span><span class="tx">Landing pages y dashboards de Coppel Emprende, e informes finales de comprobación en el portal de aliados.</span></div>
+        <div class="band bt">Transversal</div>
+        <div class="node nt" id="OT1" data-fuente="§4 T.1, T.4"><span class="tt">Línea base común levantada y actualizada</span><span class="tx">Diagnósticos de ecosistema en diez ciudades intermedias (extendidos a ciudades nuevas) y re-diagnósticos al cierre que miden el avance de madurez de cada ciudad.</span></div>
+        <div class="node nt" id="OT2" data-fuente="§4 T.3, T.4"><span class="tt">Medición consolidada de la estrategia</span><span class="tx">Tabla única de indicadores desagregada por sexo, reportes de medio término y cierre, y learning briefs publicados y entregados a los actores locales.</span></div>
+      </div>
+
+      <div class="col" id="col-r">
+        <div class="colhead">Outcomes a 3 años</div>
+        <div class="node nr" id="R1" data-fuente="§2 OE1, §3, §10.2"><span class="tt">Las organizaciones de apoyo acompañan a más y mejores emprendedores</span><span class="tx">Las 30 OAE fortalecidas elevan sus capacidades —medidas de línea base a cierre— y operan modelos de formación modernizados, medidos y financiables, listos para replicarse en ecosistemas más incipientes.</span></div>
+        <div class="node nr" id="R2" data-fuente="§10.2"><span class="tt">Los emprendedores formados ponen en marcha negocios nuevos</span><span class="tx">1,500 emprendimientos inician operaciones a partir de los programas de formación financiados por la convocatoria.</span></div>
+        <div class="node nr" id="R3" data-fuente="§2 OE2, §3"><span class="tt">Los actores de cada ciudad trabajan articulados en torno a una agenda común</span><span class="tx">Se apropian de los datos del diagnóstico, co-crean la solución a los retos y debilidades de su ecosistema y la sostienen en operación; los participantes conservan la red y la capacidad de diseño para seguir colaborando.</span></div>
+        <div class="node nr" id="R4" data-fuente="§3, §10.2"><span class="tt">El ecosistema moviliza y compromete capital local</span><span class="tx">Los aliados de las organizaciones aportan contraparte de dos a uno o más en el Componente 1, los actores del ecosistema y los gobiernos aportan uno a uno en los Componentes 2 y 3, y esa inversión local empieza a convertirse en negocios en el territorio.</span></div>
+        <div class="node nr" id="R5" data-fuente="§2 OE3, §3"><span class="tt">Los micronegocios mejoran su gestión y su productividad</span><span class="tx">Con capacitación aplicada y un primer capital productivo en especie, mejoran sus procesos, avanzan hacia la formalización y crecen.</span></div>
+        <div class="node nr" id="R6" data-fuente="§10.1"><span class="tt">Los negocios apoyados incrementan sus ventas 15% en promedio</span><span class="tx">Medido antes y después de cada intervención.</span></div>
+        <div class="node nr" id="R7" data-fuente="§10.1"><span class="tt">Los negocios generan ingreso y empleo, con participación de las mujeres</span><span class="tx">52,500 empleos en los negocios apoyados directamente (incluido el autoempleo) y 7,500 en los indirectos; la mitad ocupados por mujeres, y los negocios liderados por mujeres alcanzan el 55% de los directos y el 50% de los indirectos.</span></div>
+      </div>
+
+      <div class="col" id="col-l">
+        <div class="colhead">Outcomes de largo plazo</div>
+        <div class="node nr" id="L1" data-fuente="§2 OE1"><span class="tt">Las organizaciones conservan la capacidad instalada después del recurso</span><span class="tx">Y continúan acompañando emprendedores sin depender de la subvención.</span></div>
+        <div class="node nr" id="L2" data-fuente="§2 OE2, §3"><span class="tt">El ecosistema de cada ciudad reduce la asimetría de información</span><span class="tx">La que encarecía y arriesgaba invertir; retiene y reinvierte su capital: la inversión se convierte en negocios en el territorio.</span></div>
+        <div class="node nr" id="L3" data-fuente="§4, T.4"><span class="tt">Los actores locales quedan como dueños del trabajo de su ecosistema</span><span class="tx">Y cada ciudad avanza de nivel de madurez, medido por el re-diagnóstico de cierre.</span></div>
+        <div class="node nr" id="L4" data-fuente="§2"><span class="tt">Las ciudades cuentan con ecosistemas autosostenibles</span><span class="tx">Capaces de crear y hacer crecer sus propios negocios.</span></div>
+      </div>
+
+      <div class="col" id="col-g">
+        <div class="colhead">Impacto</div>
+        <div class="node ng impact" id="IMP" data-fuente="§2, §3"><span class="tt">Impacto</span><span class="tx">Más personas en México acceden a oportunidades de movilidad social y mejoran sus condiciones de vida a través del emprendimiento — los emprendedores y los microempresarios y, a través de ellos, sus familias y comunidades.</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="panel"><button class="cls" id="panelClose">×</button><h3 id="panelTitle"></h3><p id="panelBody"></p></div>
+
+  <footer class="foot">
+    Estrategia de Emprendimiento (Fundación Coppel · ANDE) · Teoría de cambio, cadena causal completa · Elaborada a partir del Documento madre V3 (v0.6, julio 2026), única fuente; sin contenidos inferidos. Los supuestos de cada enlace y el manejo de riesgos se desarrollan en las Secciones 3 y 11 del documento madre.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var EDGES = [
+    ["I1","A1a"],["I1","A2c"],["I1","A3b"],["I1","AT2"],
+    ["I2","A3b"],
+    ["I3","A1a"],["I3","A2c"],
+    ["I4","AT1"],["I4","A1d"],["I4","A2a"],["I4","A2b"],["I4","AT3"],["I4","AT4"],
+    ["I5","A3a"],["I5","A1d"],
+    ["I6","A1a"],["I6","A3b"],["I6","A3d"],["I6","AT2"],
+    ["A1a","O11"],["A1b","O12"],["A1c","O13"],["A1d","O14"],
+    ["A2a","O21"],["A2b","O22"],["A2b","O23"],["A2c","O22"],["A2d","O22"],["A2d","O23"],
+    ["A3a","O31"],["A3b","O32"],["A3c","O33"],["A3d","O34"],
+    ["AT1","OT1"],["AT2","O11"],["AT2","O22"],["AT2","O32"],["AT3","OT2"],["AT4","OT1"],["AT4","OT2"],
+    ["O11","R1"],["O11","R4"],["O12","R2"],["O12","R6"],["O13","R1"],["O14","R1"],["O14","R6"],["O14","R7"],
+    ["O21","R3"],["O22","R3"],["O22","R4"],["O22","R6"],["O22","R7"],["O23","R3"],
+    ["O31","R5"],["O31","R7"],["O32","R4"],["O33","R5"],["O33","R6"],["O33","R7"],["O34","R5"],
+    ["OT1","R3"],["OT2","R6"],
+    ["R1","L1"],["R2","L4"],["R3","L2"],["R3","L3"],["R4","L2"],["R5","L4"],["R6","L4"],["R7","IMP"],
+    ["L1","IMP"],["L2","IMP"],["L3","IMP"],["L4","IMP"]
+  ];
+  var COLOR = {I:"#9db2c2",A1:"#18B0DE",A2:"#e0a41f",A3:"#074B7C",AT:"#7d6fae",O1:"#18B0DE",O2:"#e0a41f",O3:"#074B7C",OT:"#7d6fae",R:"#074B7C",L:"#074B7C"};
+  function edgeColor(src){
+    if(/^I/.test(src)) return COLOR.I;
+    if(/^A1/.test(src)) return COLOR.A1; if(/^A2/.test(src)) return COLOR.A2; if(/^A3/.test(src)) return COLOR.A3; if(/^AT/.test(src)) return COLOR.AT;
+    if(/^O1/.test(src)) return COLOR.O1; if(/^O2/.test(src)) return COLOR.O2; if(/^O3/.test(src)) return COLOR.O3; if(/^OT/.test(src)) return COLOR.OT;
+    return COLOR.R;
+  }
+  var wrap=document.getElementById("wrap"), svg=document.getElementById("edges"), flow=document.getElementById("flow");
+  var fwd={}, bwd={};
+  EDGES.forEach(function(e){ (fwd[e[0]]=fwd[e[0]]||[]).push(e[1]); (bwd[e[1]]=bwd[e[1]]||[]).push(e[0]); });
+
+  var paths=[];
+  function draw(){
+    var wr=wrap.getBoundingClientRect();
+    svg.setAttribute("width",wr.width); svg.setAttribute("height",wr.height);
+    svg.setAttribute("viewBox","0 0 "+wr.width+" "+wr.height);
+    svg.innerHTML=""; paths=[];
+    EDGES.forEach(function(e){
+      var a=document.getElementById(e[0]), b=document.getElementById(e[1]);
+      if(!a||!b) return;
+      var ra=a.getBoundingClientRect(), rb=b.getBoundingClientRect();
+      var x1=ra.right-wr.left, y1=ra.top+ra.height/2-wr.top;
+      var x2=rb.left-wr.left,  y2=rb.top+rb.height/2-wr.top;
+      var dx=Math.max(30,(x2-x1)/2);
+      var p=document.createElementNS("http://www.w3.org/2000/svg","path");
+      p.setAttribute("d","M"+x1+","+y1+" C"+(x1+dx)+","+y1+" "+(x2-dx)+","+y2+" "+x2+","+y2);
+      p.setAttribute("fill","none");
+      p.setAttribute("stroke",edgeColor(e[0]));
+      p.setAttribute("stroke-width","1.4");
+      p.setAttribute("stroke-opacity","0.28");
+      p.dataset.src=e[0]; p.dataset.dst=e[1];
+      svg.appendChild(p); paths.push(p);
+    });
+  }
+
+  function chain(id){
+    var lit={}; lit[id]=true;
+    var q=[id]; while(q.length){ var n=q.shift(); (bwd[n]||[]).forEach(function(m){ if(!lit[m]){lit[m]=true;q.push(m);} }); }
+    q=[id]; while(q.length){ var n2=q.shift(); (fwd[n2]||[]).forEach(function(m){ if(!lit[m]){lit[m]=true;q.push(m);} }); }
+    return lit;
+  }
+
+  var panel=document.getElementById("panel"), pT=document.getElementById("panelTitle"), pB=document.getElementById("panelBody");
+  var current=null;
+  function reset(){
+    current=null; flow.classList.remove("dimmed"); panel.classList.remove("on");
+    document.querySelectorAll(".node.lit").forEach(function(n){n.classList.remove("lit");});
+    paths.forEach(function(p){ p.setAttribute("stroke-opacity","0.28"); p.setAttribute("stroke-width","1.4"); });
+  }
+  function select(node){
+    current=node.id;
+    var lit=chain(node.id);
+    flow.classList.add("dimmed");
+    document.querySelectorAll(".node").forEach(function(n){ n.classList.toggle("lit", !!lit[n.id]); });
+    paths.forEach(function(p){
+      var on = lit[p.dataset.src] && lit[p.dataset.dst];
+      p.setAttribute("stroke-opacity", on ? "0.85" : "0.05");
+      p.setAttribute("stroke-width", on ? "2.2" : "1.2");
+    });
+    var tt=node.querySelector(".tt").textContent;
+    var body=node.querySelector(".ds")||node.querySelector(".tx");
+    pT.textContent=tt; pB.textContent=body?body.textContent:"";
+    panel.classList.add("on");
+  }
+  document.querySelectorAll(".node").forEach(function(n){
+    n.addEventListener("click",function(ev){ ev.stopPropagation(); if(current===n.id){reset();} else {select(n);} });
+  });
+  document.getElementById("panelClose").addEventListener("click",function(ev){ev.stopPropagation();reset();});
+  document.body.addEventListener("click",function(){ reset(); });
+  document.addEventListener("keydown",function(ev){ if(ev.key==="Escape") reset(); });
+
+  var tgl=document.getElementById("toggleDesc");
+  tgl.addEventListener("click",function(ev){
+    ev.stopPropagation();
+    document.querySelector(".sheet").classList.toggle("showdesc");
+    tgl.textContent = document.querySelector(".sheet").classList.contains("showdesc") ? "Ocultar descripciones" : "Mostrar descripciones";
+    draw(); if(current){ var n=document.getElementById(current); if(n) select(n); }
+  });
+
+  window.addEventListener("resize",function(){ draw(); if(current){ var n=document.getElementById(current); if(n) select(n); } });
+  draw(); setTimeout(draw,150);
+})();
+</script>
+</body>
+</html>
