@@ -1,30 +1,35 @@
-# Estrategia de Emprendimiento · México
+# Entrepreneurship Strategy · Mexico
 
-Teoría de cambio · Cadena causal completa · **Fundación Coppel · ANDE**
+Theory of Change · Full Causal Chain · **Fundación Coppel · ANDE**
 
-Visualización interactiva de la teoría de cambio de la Estrategia de Emprendimiento
-(Insumos → Actividades → Outputs → Outcomes → Impacto), con los tres componentes:
+Interactive visualization of the Entrepreneurship Strategy's theory of change
+(Inputs → Activities → Outputs → Outcomes → Impact), across the three components:
 
-- **C1** · Fortalecimiento de Organizaciones
-- **C2** · Desarrollo de Ecosistemas
-- **C3** · Apoyo a Pequeños negocios
+- **C1** · Organizational Strengthening
+- **C2** · Ecosystem Development (Action Labs)
+- **C3** · Business Capability Development & Access to Capital
 
-## Ver la visualización
+Plus the three **cross-cutting objectives** measured at program level: business
+formalization, digitalization, and access to financial products and services.
 
-Página publicada con GitHub Pages:
+## View the visualization
+
+Published with GitHub Pages:
 
 👉 **https://ande-aspen.github.io/emprendimiento-mx/**
 
-Haz clic en cualquier nodo para seguir su cadena causal; usa "Mostrar descripciones"
-para ver el detalle de cada actividad.
+Click any node to follow its causal chain; use "Show descriptions" for the detail
+of each activity and "Show KPIs" for the 3-year targets.
 
-## Archivos
+## Files
 
-- [`index.html`](index.html) — visualización (misma que `teoria-de-cambio.html`).
-- [`teoria-de-cambio.html`](teoria-de-cambio.html) — copia con nombre descriptivo.
+- [`index.html`](index.html) — the visualization (same as `teoria-de-cambio.html`).
+- [`teoria-de-cambio.html`](teoria-de-cambio.html) — copy with a descriptive name.
 
-## Fuente
+## Source
 
-Elaborada a partir del Documento madre V3 (v0.6, julio 2026), única fuente; sin
-contenidos inferidos. Los supuestos de cada enlace y el manejo de riesgos se
-desarrollan en las Secciones 3 y 11 del documento madre.
+English version prepared for Visa Foundation (July 2026). Built from the Grantee
+Questionnaire V5.7 (canonical source, incl. reviewer feedback) and the master
+strategy document (Documento Madre V3, v0.7). Assumptions behind each link and
+risk management are developed in the questionnaire's Risks section and the master
+document (§3, §11).

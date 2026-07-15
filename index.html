@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teoría de cambio · Cadena causal completa · Estrategia de Emprendimiento · Fundación Coppel · ANDE</title>
+<title>Theory of Change · Full Causal Chain · Entrepreneurship Strategy · Fundación Coppel · ANDE</title>
 <!--
-  METADATO INTERNO (no visible) — Fuente única: Project Narrative/01_Estrategia_Emprendimiento_Documento_Madre_V3.md (v0.6, jul-2026).
-  Cada nodo lleva su referencia en el atributo data-fuente. Sin contenidos inferidos.
-  Construido por fases con OK de Pedro: Insumos (6) · Actividades (16) · Outputs (13) · Outcomes 3 años (7) · Outcomes largo plazo (4) · Impacto (1).
+  INTERNAL NOTE (not visible) — Sources: Visa Foundation Grantee Questionnaire V5.7 (canonical, incl. reviewer feedback of 15-Jul-2026)
+  and Documento Madre V3 (v0.7). KPI set per decisions of 13–15 Jul 2026 (program totals, simplified indirect reach, thematic module table).
+  Each node keeps its source in data-fuente. English version prepared for Visa Foundation (shared as PDF).
 -->
 <style>
   :root{
@@ -20,6 +20,7 @@
     --neu:#f2f5f8; --neua:#9db2c2;
     --res:#eef3f7; --resa:#074B7C;
     --green:#E6F3DC; --green-acc:#A9D08E; --green-ink:#2E5621; --green-lbl:#3F7A2E;
+    --obj:#fdeeee; --obja:#c96a5f; --objt:#8f3a30;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;}
@@ -28,9 +29,11 @@
   header.head{border-bottom:3px solid var(--gold);padding-bottom:12px;margin-bottom:12px;}
   .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin:0 0 4px;}
   h1{font-size:22px;margin:0;color:var(--teal);font-weight:800;}
-  .causal{font-size:13px;color:var(--ink);margin:9px 0 0;font-style:italic;line-height:1.5;max-width:1100px;}
-  .pop{font-size:12.5px;color:var(--muted);margin:0 0 12px;background:var(--mist);border-left:4px solid var(--blue);border-radius:5px;padding:8px 13px;}
+  .causal{font-size:13px;color:var(--ink);margin:9px 0 0;font-style:italic;line-height:1.5;max-width:1150px;}
+  .pop{font-size:12.5px;color:var(--muted);margin:0 0 8px;background:var(--mist);border-left:4px solid var(--blue);border-radius:5px;padding:8px 13px;}
   .pop b{color:var(--teal);}
+  .obj{font-size:12.5px;color:var(--objt);margin:0 0 12px;background:var(--obj);border-left:4px solid var(--obja);border-radius:5px;padding:8px 13px;}
+  .obj b{color:var(--objt);}
   .bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:12px 0 14px;font-size:12px;}
   .bar .lg{display:inline-flex;align-items:center;gap:6px;color:var(--muted);}
   .chip{width:13px;height:13px;border-radius:3px;display:inline-block;border:1px solid transparent;}
@@ -39,6 +42,7 @@
   .chip.k3{background:var(--c3);border-color:var(--c3a);}
   .chip.kt{background:var(--tr);border-color:var(--tra);}
   .chip.kn{background:var(--neu);border-color:var(--neua);}
+  .chip.ko{background:var(--obj);border-color:var(--obja);}
   .chip.kg{background:var(--green);border-color:var(--green-acc);}
   .hint{color:var(--muted);font-size:11.5px;margin-left:auto;}
   button.tgl{border:1px solid var(--line);background:#fff;color:var(--teal);font-weight:700;font-size:11.5px;border-radius:6px;padding:5px 10px;cursor:pointer;}
@@ -49,11 +53,8 @@
   .flow{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:26px;align-items:start;}
   .col{display:flex;flex-direction:column;gap:8px;}
   .colhead{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);text-align:center;padding:4px 0 6px;border-bottom:2px solid var(--line);margin-bottom:4px;}
-  .outcomes-group{grid-column:span 2;display:flex;flex-direction:column;gap:8px;}
-  .colsub-band{font-size:11px;font-style:italic;color:var(--muted);line-height:1.4;text-align:center;background:var(--mist);border-left:3px solid var(--gold);border-radius:6px;padding:7px 12px;}
-  .outcomes-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;}
   .band{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin:8px 0 0;padding:2px 4px;}
-  .band.b1{color:var(--c1t);} .band.b2{color:var(--c2t);} .band.b3{color:var(--c3t);} .band.bt{color:var(--trt);}
+  .band.b1{color:var(--c1t);} .band.b2{color:var(--c2t);} .band.b3{color:var(--c3t);} .band.bt{color:var(--trt);} .band.bo{color:var(--objt);}
 
   .node{border-radius:8px;padding:9px 11px;border:1px solid var(--line);font-size:11.8px;background:var(--neu);cursor:pointer;transition:box-shadow .15s,opacity .2s,transform .12s;}
   .node:hover{box-shadow:0 2px 8px rgba(7,75,124,.18);transform:translateY(-1px);}
@@ -66,13 +67,15 @@
   .node.n3{background:var(--c3);border-color:#b9c9d9;} .node.n3 .tt{color:var(--c3t);}
   .node.nt{background:var(--tr);border-color:var(--tra);} .node.nt .tt{color:var(--trt);}
   .node.nr{background:var(--res);border-color:#c5d4e0;}
+  .node.no{background:var(--obj);border-color:var(--obja);} .node.no .tt{color:var(--objt);}
   .node.ng{background:var(--green);border-color:var(--green-acc);} .node.ng .tt{color:var(--green-lbl);}
   .node.ng .tx{color:var(--green-ink);font-weight:700;}
   .node.impact{padding:16px 14px;font-size:13px;}
   .node.impact .tt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
 
-  .kpiwrap{display:flex;margin-top:7px;flex-wrap:wrap;gap:4px;}
-  .kpi{display:inline-block;background:var(--gold);border:1px solid #d79a14;color:#3d2e00;font-size:10.5px;font-weight:800;border-radius:6px;padding:4px 8px;line-height:1.35;box-shadow:0 1px 2px rgba(215,154,20,.3);}
+  .kpiwrap{display:none;margin-top:6px;flex-wrap:wrap;gap:4px;}
+  .showkpi .kpiwrap{display:flex;}
+  .kpi{display:inline-block;background:#fbf4e2;border:1px solid var(--gold);color:#5e4a14;font-size:10px;font-weight:700;border-radius:10px;padding:2px 7px;line-height:1.35;}
   #panelKpis{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px;}
 
   .dimmed .node{opacity:.18;}
@@ -87,8 +90,8 @@
 
   footer.foot{margin-top:18px;border-top:1px solid var(--line);padding-top:10px;font-size:11.5px;color:var(--muted);}
 
-  /* ===== Responsive: las 6 columnas se angostan de forma fluida al reducir el ancho;
-     en teléfono y tablet en vertical se apilan en una sola columna ===== */
+  /* ===== Responsive: the 6 columns narrow fluidly as width shrinks;
+     on phones and portrait tablets they stack into a single column ===== */
   @media (max-width:932px), (orientation:portrait) and (max-width:1400px){
     body{padding:14px 10px;}
     .sheet{min-width:0;max-width:100%;width:100%;padding:18px 15px 20px;}
@@ -96,25 +99,20 @@
     h1{font-size:19px;}
     .eyebrow{font-size:11px;}
     .causal{font-size:12.5px;max-width:none;}
-    .pop{font-size:12px;}
+    .pop,.obj{font-size:12px;}
     .bar{gap:10px;margin:10px 0 12px;}
     .hint{margin-left:0;flex-basis:100%;}
 
-    /* Apilar las seis etapas una debajo de otra, en orden causal */
+    /* Stack the six stages one below another, in causal order */
     .wrap{position:static;}
-    svg#edges{display:none;}                 /* los conectores horizontales no aplican apilados */
+    svg#edges{display:none;}                 /* horizontal connectors do not apply when stacked */
     .flow{display:flex;flex-direction:column;gap:0;align-items:stretch;}
     .col{gap:9px;padding-bottom:4px;}
 
-    /* Encabezado de cada etapa como separador de sección a todo lo ancho */
+    /* Each stage header becomes a full-width section separator */
     .colhead{font-size:12px;text-align:left;letter-spacing:.1em;margin:20px 0 9px;
              padding:7px 11px;background:var(--mist);border-bottom:2px solid var(--gold);border-radius:6px;}
-    #col-i .colhead{margin-top:2px;}         /* la primera etapa sin salto extra */
-
-    /* Outcomes: banda única arriba y las dos columnas apiladas */
-    .outcomes-group{gap:0;}
-    .outcomes-cols{display:flex;flex-direction:column;gap:0;}
-    .colsub-band{text-align:left;margin:20px 0 2px;}
+    #col-i .colhead{margin-top:2px;}         /* first stage without extra gap */
 
     .band{font-size:10px;margin-top:11px;}
     .node{font-size:13px;padding:11px 13px;}
@@ -122,10 +120,11 @@
     .node.impact{font-size:14px;padding:16px 14px;}
     .kpi{font-size:11px;}
 
-    /* Detalle como hoja inferior de ancho completo */
+    /* Detail as a full-width bottom sheet */
     #panel{left:10px;right:10px;width:auto;max-height:52vh;bottom:10px;}
   }
 
+  @page{size:480mm 1030mm;margin:8mm;}
   @media print{
     body{background:#fff;padding:0;}
     .sheet{border:none;box-shadow:none;min-width:0;max-width:100%;}
@@ -139,23 +138,26 @@
 <div class="sheet">
 
   <header class="head">
-    <p class="eyebrow">Estrategia de Emprendimiento · Fundación Coppel · ANDE</p>
-    <h1>Teoría de cambio · Cadena causal completa</h1>
-    <p class="causal">Si las organizaciones que acompañan al emprendedor se profesionalizan, los actores de cada región co-crean la solución a los retos de su ecosistema y los micronegocios reciben capacidades y un primer capital, entonces el ecosistema convierte la inversión en negocios, porque la apropiación local y la información verificable reducen el costo y el riesgo de invertir en él.</p>
+    <p class="eyebrow">Strengthening Entrepreneurial Ecosystems for Small Business Growth in Mexico's Intermediate Cities · Fundación Coppel · ANDE</p>
+    <h1>Theory of Change · Full Causal Chain</h1>
+    <p class="causal">If the organizations that support entrepreneurs become stronger, the actors of each city co-create the solution to their ecosystem's challenges, and micro-businesses receive practical training, new capabilities, and a first productive capital, then the ecosystem converts investment into growing businesses — because local ownership and verifiable information reduce the cost and the risk of investing in it.</p>
   </header>
 
-  <p class="pop"><b>Beneficiarios:</b> los emprendedores y los micronegocios de las ciudades intermedias y, a través de ellos, sus familias y comunidades. Las organizaciones de apoyo y los actores del ecosistema son beneficiarios intermedios.</p>
+  <p class="pop"><b>Beneficiaries:</b> entrepreneurs and micro-businesses in Mexico's intermediate cities and, through them, their families and communities. Entrepreneur support organizations (ESOs) and ecosystem actors are intermediate beneficiaries.</p>
+  <p class="obj"><b>Three cross-cutting objectives</b> run through every intervention and provide the shared framework for measuring impact at the entrepreneur, institutional, and ecosystem levels: <b>business formalization</b>, <b>digitalization</b>, and <b>access to financial products and services</b>. They appear below as program-level outcomes.</p>
 
   <div class="bar">
-    <span class="lg"><span class="chip k1"></span> C1 · Fortalecimiento de Organizaciones</span>
-    <span class="lg"><span class="chip k2"></span> C2 · Desarrollo de Ecosistemas</span>
-    <span class="lg"><span class="chip k3"></span> C3 · Apoyo a Pequeños negocios</span>
-    <span class="lg"><span class="chip kt"></span> Transversal</span>
-    <span class="lg"><span class="chip kn"></span> Insumos / convergencia</span>
-    <span class="lg"><span class="chip kg"></span> Impacto</span>
-    <span class="lg"><span class="kpi">KPI</span> Meta a 3 años</span>
-    <button class="tgl" id="toggleDesc">Mostrar descripciones</button>
-    <span class="hint">Haz clic en un nodo para ver su detalle y seguir su cadena causal · clic fuera para restablecer</span>
+    <span class="lg"><span class="chip k1"></span> C1 · Organizational Strengthening</span>
+    <span class="lg"><span class="chip k2"></span> C2 · Ecosystem Development</span>
+    <span class="lg"><span class="chip k3"></span> C3 · Business Capability Development &amp; Access to Capital</span>
+    <span class="lg"><span class="chip kt"></span> Cross-component</span>
+    <span class="lg"><span class="chip kn"></span> Inputs / convergence</span>
+    <span class="lg"><span class="chip ko"></span> Cross-cutting objective outcomes</span>
+    <span class="lg"><span class="chip kg"></span> Impact</span>
+    <span class="lg"><span class="kpi">KPI</span> 3-year target (measurement layer)</span>
+    <button class="tgl" id="toggleDesc">Show descriptions</button>
+    <button class="tgl" id="toggleKpi">Show KPIs</button>
+    <span class="hint">Click a node to see its detail and follow its causal chain · click outside to reset</span>
   </div>
 
   <div class="wrap" id="wrap">
@@ -163,87 +165,87 @@
     <div class="flow" id="flow">
 
       <div class="col" id="col-i">
-        <div class="colhead">Insumos</div>
-        <div class="node nn" id="I1" data-fuente="§9, §12.1"><span class="tt">Capital filantrópico</span><span class="tx">Fundación Coppel aporta USD $1,636,000 y conserva la decisión sobre su asignación; Fundación Visa aporta USD $1,000,000 (solicitud a 36 meses). Es el capital catalítico que activa las convocatorias, los laboratorios y el capital semilla.</span></div>
-        <div class="node nn" id="I2" data-fuente="§7, §12.1"><span class="tt">Coinversión pública</span><span class="tx">Los gobiernos locales (estatales o municipales) coinvierten peso a peso el capital semilla: USD $660,000 en los tres años, con convenios anuales.</span></div>
-        <div class="node nn" id="I3" data-fuente="§5, §6, §12.1"><span class="tt">Contraparte local del ecosistema</span><span class="tx">Las organizaciones participantes y sus aliados (universidades, gobiernos, empresas) aportan contraparte 1:1 a los proyectos financiados: USD $674,157 en la convocatoria del C1, más la contraparte que moviliza cada laboratorio.</span></div>
-        <div class="node nn" id="I4" data-fuente="§3, §4-T.1, §5, §6, §9"><span class="tt">Método y conocimiento de ANDE</span><span class="tx">El diagnóstico de ecosistemas (siete dominios, cinco tipos de actor, cuatro niveles de madurez), levantado en diez ciudades intermedias como línea base común; la metodología de diseño participativo de MIT D-Lab; el marco SCALE y las valoraciones iniciales de capacidades; y el marco de medición y seguimiento.</span></div>
-        <div class="node nn" id="I5" data-fuente="§7, §5, T.3"><span class="tt">Plataformas tecnológicas</span><span class="tx">Coppel Emprende (capacitación gratuita en línea, más de cien lecciones, alcance nacional) y andeimpact.org (reporte y trazabilidad de resultados), con landing pages y dashboards por estado.</span></div>
-        <div class="node nn" id="I6" data-fuente="§9, §5"><span class="tt">Capacidad institucional y alianzas</span><span class="tx">Los equipos de Fundación Coppel y ANDE; FUNDES como socio operativo del Componente 3; las OSC ejecutoras y donatarias en territorio; y el padrón de organizaciones elegibles que Coppel y ANDE integran y actualizan.</span></div>
+        <div class="colhead">Inputs</div>
+        <div class="node nn" id="I1" data-fuente="V5.7 Budget; §9, §12.1"><span class="tt">Philanthropic capital</span><span class="tx">Fundación Coppel contributes USD $1,636,000 and retains the decision over its allocation; Visa Foundation contributes USD $1,000,000 (36-month request). This is the catalytic capital that activates the ESO calls, the Action Labs, and the seed capital.</span></div>
+        <div class="node nn" id="I2" data-fuente="V5.7; §7, §12.1"><span class="tt">Public co-investment</span><span class="tx">Local (state or municipal) governments match the seed capital 1:1: USD $660,000 over the three years, under annual agreements.</span></div>
+        <div class="node nn" id="I3" data-fuente="V5.7; §5, §6, §12.1"><span class="tt">Local ecosystem counterpart</span><span class="tx">Participating organizations and their allies (universities, governments, companies) contribute 1:1 counterpart funding to every funded project: USD $674,157 in the Component 1 calls, plus the counterpart each Action Lab mobilizes.</span></div>
+        <div class="node nn" id="I4" data-fuente="§3, §4-T.1, §5, §6, §9"><span class="tt">ANDE's method and knowledge</span><span class="tx">The ecosystem diagnostic (seven domains, five actor types, four maturity levels), applied in ten intermediate cities as the common baseline; the MIT D-Lab participatory design methodology; the SCALE framework and initial capability assessments; and the measurement framework.</span></div>
+        <div class="node nn" id="I5" data-fuente="§7, §5, T.3"><span class="tt">Technology platforms</span><span class="tx">Coppel Emprende (free national online training, 100+ short lessons) and andeimpact.org (results reporting and traceability), with landing pages and dashboards per state.</span></div>
+        <div class="node nn" id="I6" data-fuente="V5.7 Staffing; §9, §5"><span class="tt">Institutional capacity and alliances</span><span class="tx">The Fundación Coppel and ANDE teams; FUNDES as Fundación Coppel's operating partner for Component 3; the executing NGOs in each state; and the registry of eligible organizations that Coppel and ANDE maintain.</span></div>
       </div>
 
       <div class="col" id="col-a">
-        <div class="colhead">Actividades</div>
-        <div class="band b1">C1 · Emprender para crecer</div>
-        <div class="node n1" id="A1a" data-fuente="§5, act. 1.1–1.4"><span class="tt">Convocatoria anual de dos vías: diseño, invitación, evaluación y selección</span><span class="ds">Fundación Coppel financia la bolsa y define los estados prioritarios de cada edición, que ponderan a favor sin excluir al resto del país. Se invita a las organizaciones del padrón que Coppel y ANDE integran, y un comité evalúa a ciegas con entrevistas de calibración para seleccionar alrededor de diez organizaciones por edición, tres ediciones (2026–2028), con subvención de hasta la mitad del costo y contraparte 1:1.</span></div>
-        <div class="node n1" id="A1b" data-fuente="§5, act. 1.5"><span class="tt">Implementación de proyectos · Vía 1 Impulso al emprendimiento</span><span class="ds">La organización imparte su programa de formación de emprendimientos: al menos tres elementos entre habilidades, mentorías, entrenamiento especializado, modelo financiero, financiamiento, acceso a mercados y capital social, con duración mínima de tres meses, al menos 50 emprendedores y diagnóstico de entrada y salida. Puede incluir capital semilla para los participantes (hasta el 50% del costo, preferentemente en especie) y se complementa con el módulo Punto Cero de Coppel Emprende. Hasta $500,000 MXN por proyecto, implementado en doce meses.</span></div>
-        <div class="node n1" id="A1c" data-fuente="§5, act. 1.6"><span class="tt">Implementación de proyectos · Vía 2 Fortalecimiento de organizaciones</span><span class="ds">La organización ejecuta un proyecto para modernizar, actualizar, fortalecer o medir su modelo de formación de emprendedores ya existente, con capacitación, asistencia técnica y acompañamiento. El proyecto prepara el modelo para su potencial réplica en ecosistemas más incipientes. Hasta $450,000 MXN por proyecto.</span></div>
-        <div class="node n1" id="A1d" data-fuente="§5, act. 1.7–1.8"><span class="tt">Acompañamiento de ANDE y medición en andeimpact.org</span><span class="ds">ANDE valora el punto de partida de cada organización y la acompaña durante toda la implementación con el marco SCALE, con apoyo en métricas, procuración de fondos, gobernanza, institucionalización y comunicación. La organización reporta en andeimpact.org a medio término, al cierre y cuatro meses después de concluir; la plataforma da trazabilidad a las startups incubadas y a las empresas escalables aceleradas.</span></div>
-        <div class="band b2">C2 · Laboratorios de acción</div>
-        <div class="node n2" id="A2a" data-fuente="§6, act. 2.1–2.2"><span class="tt">Preparación del laboratorio y socialización del diagnóstico</span><span class="ds">Un comité asesor local (3 a 6 referentes de la ciudad) delimita el reto con base en el diagnóstico y ayuda a reclutar, por invitación, de 4 a 10 organizaciones del ecosistema. En la primera reunión presencial ANDE presenta los hallazgos del diagnóstico, los actores se reconocen en sus propios datos y construyen una visión común del reto.</span></div>
-        <div class="node n2" id="A2b" data-fuente="§6, act. 2.3"><span class="tt">Facilitación del ciclo de diseño participativo</span><span class="ds">ANDE facilita alrededor de nueve sesiones con la metodología de MIT D-Lab, en cinco fases: aprender, imaginar, crear, probar y sintetizar, a lo largo de seis a doce meses. El trabajo real ocurre entre sesiones, dentro de las organizaciones participantes. Doce laboratorios en los tres años, cuatro por año.</span></div>
-        <div class="node n2" id="A2c" data-fuente="§6, act. 2.4–2.5"><span class="tt">Selección entre pares y entrega del financiamiento a la mejor solución</span><span class="ds">Los equipos presentan sus soluciones y los propios participantes seleccionan entre pares la más prometedora, con rúbrica predefinida; al comité se puede invitar a financiadores aliados. El millón de pesos (MXN), asegurado desde el inicio, se entrega al final al grupo ganador vía su donataria o una donataria anfitriona del ecosistema, y se activa la contraparte 1:1.</span></div>
-        <div class="node n2" id="A2d" data-fuente="§6, act. 2.6–2.7"><span class="tt">Implementación de la solución y documentación del ciclo</span><span class="ds">El grupo ganador ejecuta la solución (por ejemplo, un club de ángeles inversionistas o un mecanismo de colaboración entre instituciones). Se miden los resultados sobre la línea base del diagnóstico y cada ciudad produce un learning brief que alimenta a las demás.</span></div>
-        <div class="band b3">C3 · Coppel Emprende y capital semilla</div>
-        <div class="node n3" id="A3a" data-fuente="§7, act. 3.1"><span class="tt">Operación continua de la plataforma Coppel Emprende</span><span class="ds">Capacitación gratuita, en línea y de alcance nacional, abierta a cualquier micronegocio que se registre: más de cien lecciones breves de gestión, digitalización y medios de pago, webinars en vivo, comunidad e incentivos por avance. Corre de forma continua los 36 meses, con meta de 21,000 microempresarios inscritos.</span></div>
-        <div class="node n3" id="A3b" data-fuente="§7, act. 3.2–3.4"><span class="tt">Convenios estatales de coinversión peso a peso</span><span class="ds">El gobierno del estado postula su proyecto, firma el convenio, compromete el presupuesto que se coinvierte peso a peso con Fundación Coppel (hasta $500,000 MXN por cohorte) y designa a la OSC operadora. La OSC se da de alta en el portal de aliados y elabora con el gobierno y la Fundación el presupuesto de la cohorte antes de abrir la convocatoria. 18 cohortes estatales en los tres años, con convocatorias anuales.</span></div>
-        <div class="node n3" id="A3c" data-fuente="§7, act. 3.5–3.7"><span class="tt">Convocatoria estatal, selección y entrega del capital semilla en especie</span><span class="ds">La OSC difunde la convocatoria estatal y selecciona, con un diagnóstico homologado de necesidades, entre los micronegocios en operación (1 a 10 trabajadores) que completaron el primer nivel de capacitación (41 lecciones). El capital se entrega en especie —equipo, herramientas e insumos comprados en establecimientos formales— hasta $8,000 MXN por negocio, con un mínimo de 100 micronegocios por cohorte.</span></div>
-        <div class="node n3" id="A3d" data-fuente="§7, act. 3.8–3.9"><span class="tt">Comprobación, seguimiento y habilitación técnica</span><span class="ds">La OSC comprueba con un informe final en el portal de aliados (base de beneficiarios, diagnósticos, montos y apoyos); hasta el 35% del recurso de Coppel puede destinarse a su operación. Fundación Coppel y su socio operativo dan seguimiento periódico y habilitan por estado una landing page de Coppel Emprende con su dashboard.</span></div>
-        <div class="band bt">Transversales</div>
-        <div class="node nt" id="AT1" data-fuente="§4, T.1"><span class="tt">Levantar y actualizar el diagnóstico de ecosistemas</span><span class="ds">ANDE aplica el modelo de diagnóstico (siete dominios, cinco tipos de actor, cuatro niveles de madurez), línea base común de los tres componentes. Ya está levantado en diez ciudades intermedias y se extiende a ciudades nuevas conforme maduran.</span></div>
-        <div class="node nt" id="AT2" data-fuente="§4, T.2"><span class="tt">Administrar las subvenciones y verificar las contrapartes</span><span class="ds">Firmar los convenios de cada componente, ministrar los recursos, valorar las aportaciones en especie y comprobar la contraparte 1:1 de cada proyecto. Fundación Coppel aporta el capital y conserva la decisión de asignación.</span></div>
-        <div class="node nt" id="AT3" data-fuente="§4, T.3"><span class="tt">Medir y reportar la estrategia completa</span><span class="ds">ANDE consolida los indicadores de los tres componentes en la tabla única, desagrega negocios y empleos por sexo, y produce los reportes de medio término (año 2) y cierre (año 3).</span></div>
-        <div class="node nt" id="AT4" data-fuente="§4, T.4"><span class="tt">Re-diagnosticar, publicar aprendizajes y entregar</span><span class="ds">Al cierre, ANDE re-diagnostica cada ciudad para medir su avance de madurez, publica los learning briefs y entrega el trabajo a los actores locales, que quedan como dueños.</span></div>
+        <div class="colhead">Activities</div>
+        <div class="band b1">C1 · Organizational Strengthening</div>
+        <div class="node n1" id="A1a" data-fuente="§5, act. 1.1–1.4"><span class="tt">Annual two-track ESO call: design, invitation, evaluation, and selection</span><span class="ds">Fundación Coppel funds the grant pool and defines the priority states of each edition, which weigh in favor without excluding the rest of the country. Organizations in the Coppel–ANDE registry are invited, and a committee evaluates blind, with calibration interviews, to select about ten organizations per edition — three editions (2026–2028), grants of up to half the project cost with 1:1 counterpart.</span></div>
+        <div class="node n1" id="A1b" data-fuente="§5, act. 1.5"><span class="tt">Project implementation · Track 1: Entrepreneurship programs</span><span class="ds">The organization delivers its training program: at least three elements among business skills, mentoring, specialized training, financial modeling, financing, market access, and social capital; minimum three months; at least 50 entrepreneurs; entry and exit assessment. It may include seed capital for participants (up to 50% of cost, preferably in kind). Up to MXN $500,000 (~USD $28,000) per project, implemented in twelve months.</span></div>
+        <div class="node n1" id="A1c" data-fuente="§5, act. 1.6"><span class="tt">Project implementation · Track 2: Organizational strengthening</span><span class="ds">The organization runs a project to modernize, update, strengthen, or measure its existing entrepreneur-training model, with training, technical assistance, and accompaniment. The project prepares the model for potential replication in earlier-stage ecosystems. Up to MXN $450,000 (~USD $25,000) per project.</span></div>
+        <div class="node n1" id="A1d" data-fuente="§5, act. 1.7–1.8"><span class="tt">ANDE accompaniment and measurement on andeimpact.org</span><span class="ds">ANDE assesses each organization's starting point and accompanies it throughout implementation with the SCALE framework, supporting metrics, fundraising, governance, institutionalization, and communications. Each organization reports on andeimpact.org at mid-term, at close, and four months after closing; the platform traces supported businesses, including their formalization status.</span></div>
+        <div class="band b2">C2 · Ecosystem Development (Action Labs)</div>
+        <div class="node n2" id="A2a" data-fuente="§6, act. 2.1–2.2"><span class="tt">Lab preparation and diagnostic socialization</span><span class="ds">A local advisory committee (3–6 city referents) frames the challenge from the diagnostic and helps recruit, by invitation, 4 to 10 organizations of the ecosystem. In the first in-person meeting ANDE presents the diagnostic findings; the actors recognize themselves in their own data and build a shared vision of the challenge.</span></div>
+        <div class="node n2" id="A2b" data-fuente="§6, act. 2.3"><span class="tt">Facilitation of the participatory design cycle</span><span class="ds">ANDE facilitates about nine sessions with the MIT D-Lab methodology, in five phases — learn, imagine, create, test, synthesize — over six to twelve months. The real work happens between sessions, inside the participating organizations. Twelve labs over the three years, four per year.</span></div>
+        <div class="node n2" id="A2c" data-fuente="§6, act. 2.4–2.5; V5.7 Program Design"><span class="tt">Peer selection and funding of the winning solution</span><span class="ds">Teams present their solutions and the participants themselves select the most promising one with a predefined rubric; allied funders can be invited to the committee. To qualify, every solution must directly address an ecosystem challenge while advancing at least one of the three cross-cutting objectives: digitalization, formalization, or access to financial products. The MXN $1,000,000 (~USD $56,000), secured from the start, is delivered at the end to the winning group through its authorized nonprofit or a host nonprofit of the ecosystem, activating the 1:1 counterpart.</span></div>
+        <div class="node n2" id="A2d" data-fuente="§6, act. 2.6–2.7"><span class="tt">Solution implementation and cycle documentation</span><span class="ds">The winning group implements the solution (for example, an angel investor club or an inter-institutional collaboration mechanism). Results are measured against the diagnostic baseline and each city produces a learning brief that feeds the others.</span></div>
+        <div class="band b3">C3 · Business Capability Development &amp; Access to Capital</div>
+        <div class="node n3" id="A3a" data-fuente="§7, act. 3.1"><span class="tt">Continuous operation of the Coppel Emprende platform</span><span class="ds">Free, online, nationwide training open to any micro-business that registers: 100+ short lessons on management, digitalization, and payment methods, live webinars, community, and progress incentives. Runs continuously for the 36 months, with a target of 21,000 micro-entrepreneurs enrolled (6,000 / 7,000 / 8,000 per year).</span></div>
+        <div class="node n3" id="A3b" data-fuente="V5.7 Program Design; comment 11"><span class="tt">Development of the Visa-aligned learning module (30 lessons)</span><span class="ds">A dedicated learning pathway on the three cross-cutting objectives: 30 lessons over the grant — 15 new and 15 updated (5 + 5 per year). Topics are defined each January from the platform's annual entrepreneur feedback cycle; development takes 5–6 months and each cohort of lessons launches in June. Completion is certified automatically by the platform. The new lessons and modules offer a co-branding opportunity for Visa Foundation.</span></div>
+        <div class="node n3" id="A3c" data-fuente="§7, act. 3.2–3.4"><span class="tt">State co-investment agreements, matched 1:1</span><span class="ds">Each state government submits its project, signs the agreement, commits the budget matched 1:1 by Fundación Coppel (up to MXN $500,000 / ~USD $28,000 per cohort from Coppel), and designates the executing NGO. The NGO registers in the partner portal and builds the cohort budget with the government and the Foundation before the call opens. 18 state cohorts over the three years, with annual calls.</span></div>
+        <div class="node n3" id="A3d" data-fuente="§7, act. 3.5–3.7"><span class="tt">State calls, selection, and delivery of in-kind seed capital</span><span class="ds">The NGO publishes the state call and selects, with a standardized needs assessment, among operating micro-businesses (1–10 workers) that completed the first training level (41 lessons). Capital is delivered in kind — equipment, tools, and inputs purchased from formal suppliers — up to MXN $8,000 (~USD $450) per business, with a minimum of 100 micro-businesses per cohort.</span></div>
+        <div class="node n3" id="A3e" data-fuente="§7, act. 3.8–3.9"><span class="tt">Verification, follow-up, and technical enablement</span><span class="ds">The NGO verifies delivery with a final report in the partner portal (beneficiary database, assessments, amounts, and support items); up to 35% of Coppel's resources may fund its operation. Fundación Coppel and its operating partner provide periodic follow-up and enable a Coppel Emprende landing page and dashboard per state.</span></div>
+        <div class="band bt">Cross-component</div>
+        <div class="node nt" id="AT1" data-fuente="§4, T.1"><span class="tt">Conduct and update the ecosystem diagnostic</span><span class="ds">ANDE applies the diagnostic model (seven domains, five actor types, four maturity levels), the common baseline of the three components. It is already complete in ten intermediate cities and extends to new cities as they mature.</span></div>
+        <div class="node nt" id="AT2" data-fuente="§4, T.2"><span class="tt">Administer grants and verify counterparts</span><span class="ds">Sign the agreements of each component, disburse the resources, value in-kind contributions, and verify the 1:1 counterpart of every project. Fundación Coppel contributes the capital and retains the allocation decision.</span></div>
+        <div class="node nt" id="AT3" data-fuente="§4, T.3"><span class="tt">Measure and report the full strategy</span><span class="ds">ANDE consolidates the indicators of the three components into a single table, disaggregates businesses and jobs by sex, and produces the mid-term (Year 2) and final (Year 3) measurement reports.</span></div>
+        <div class="node nt" id="AT4" data-fuente="§4, T.4"><span class="tt">Re-diagnose, publish learning, and hand over</span><span class="ds">At close, ANDE re-diagnoses each city to measure its maturity gain, publishes the learning briefs, and hands the work over to the local actors, who remain its owners.</span></div>
       </div>
 
       <div class="col" id="col-o">
         <div class="colhead">Outputs</div>
         <div class="band b1">C1</div>
-        <div class="node n1" id="O11" data-fuente="§5, §10.2"><span class="tt">30 OAE seleccionadas y financiadas</span><span class="tx">En tres ediciones de la convocatoria (~10 por edición, pueden repetir), con la contraparte 1:1 de sus aliados locales activada.</span></div>
-        <div class="node n1" id="O12" data-fuente="§5"><span class="tt">Programas de formación de la Vía 1 impartidos</span><span class="tx">Cada proyecto forma al menos 50 emprendedores, con diagnóstico de entrada y salida; una parte de los emprendimientos participantes recibe capital semilla, preferentemente en especie, dentro del programa.</span></div>
-        <div class="node n1" id="O13" data-fuente="§5"><span class="tt">Modelos de formación de la Vía 2 modernizados</span><span class="tx">Modelos actualizados, fortalecidos o medidos, preparados para su potencial réplica en ecosistemas más incipientes.</span></div>
-        <div class="node n1" id="O14" data-fuente="§5, §10.1"><span class="tt">675 negocios alcanzados vía las organizaciones fortalecidas</span><span class="tx">~22 por OAE, con trazabilidad reportada en andeimpact.org y un aprendizaje documentado por ciclo que alimenta las convocatorias siguientes.</span></div>
+        <div class="node n1" id="O11" data-fuente="§5; V5.7 KPIs"><span class="tt">30 ESOs selected and funded</span><span class="tx">In three editions of the call (~10 per edition; repeat participation allowed), with the 1:1 counterpart of their local allies activated.</span><span class="kpiwrap"><span class="kpi">KPI · 30 ESOs strengthened (SCALE), baseline to close</span></span></div>
+        <div class="node n1" id="O12" data-fuente="§5"><span class="tt">Track 1 training programs delivered</span><span class="tx">Each project trains at least 50 entrepreneurs, with entry and exit assessments; part of the participating businesses receive seed capital, preferably in kind, inside the program.</span></div>
+        <div class="node n1" id="O13" data-fuente="§5"><span class="tt">Track 2 training models modernized</span><span class="tx">Models updated, strengthened, or measured, prepared for potential replication in earlier-stage ecosystems.</span></div>
+        <div class="node n1" id="O14" data-fuente="V5.7 KPIs (contractual floor)"><span class="tt">1,500 entrepreneurs reached through the strengthened ESOs</span><span class="tx">30 programs × at least 50 entrepreneurs each — the contractual floor of every grant — with traceability reported on andeimpact.org.</span><span class="kpiwrap"><span class="kpi">KPI · 1,500 businesses supported indirectly via C1</span></span></div>
         <div class="band b2">C2</div>
-        <div class="node n2" id="O21" data-fuente="§6, §10.2"><span class="tt">12 Laboratorios de acción facilitados</span><span class="tx">Cuatro por año, cada uno con 4 a 10 organizaciones de la ciudad convocadas y una visión común del reto construida sobre los datos del diagnóstico.</span></div>
-        <div class="node n2" id="O22" data-fuente="§6, §10.1"><span class="tt">12 soluciones co-creadas, seleccionadas entre pares y financiadas</span><span class="tx">Con un millón de pesos más contraparte 1:1, en operación en su ciudad (por ejemplo, un club de ángeles o un mecanismo de colaboración), alcanzando 1,200 negocios (100 por solución).</span></div>
-        <div class="node n2" id="O23" data-fuente="§6"><span class="tt">Capacidades y productos del laboratorio retenidos</span><span class="tx">Todos los participantes conservan red, prototipo, capacidad de diseño y diagnóstico, y cada ciudad produce un learning brief que alimenta a las demás.</span></div>
+        <div class="node n2" id="O21" data-fuente="§6; V5.7 KPIs"><span class="tt">12 Action Labs facilitated</span><span class="tx">Four per year, each convening 4 to 10 organizations of the city and building a shared vision of the challenge on the diagnostic data.</span><span class="kpiwrap"><span class="kpi">KPI · 12 labs facilitated through to a funded solution</span></span></div>
+        <div class="node n2" id="O22" data-fuente="§6; V5.7 Program Design"><span class="tt">12 solutions co-created, peer-selected, and funded</span><span class="tx">Each with MXN $1,000,000 plus 1:1 counterpart, operating in its city and required to advance at least one cross-cutting objective; together they reach ~1,200 businesses (100 per solution).</span><span class="kpiwrap"><span class="kpi">KPI · 1,200 businesses supported indirectly via C2</span></span></div>
+        <div class="node n2" id="O23" data-fuente="§6"><span class="tt">Lab capabilities and products retained</span><span class="tx">All participants keep the network, prototype, design capability, and diagnostic; each city produces a learning brief that feeds the others.</span></div>
         <div class="band b3">C3</div>
-        <div class="node n3" id="O31" data-fuente="§7, §10.1"><span class="tt">21,000 microempresarios inscritos en Coppel Emprende</span><span class="tx">Capacitación gratuita disponible a escala nacional; el 16% completa el primer nivel (41 lecciones), la base de la que cada cohorte selecciona.</span></div>
-        <div class="node n3" id="O32" data-fuente="§7, §10.2"><span class="tt">18 convenios estatales de coinversión firmados</span><span class="tx">Con presupuesto peso a peso comprometido y OSC operadora designada por cada gobierno.</span></div>
-        <div class="node n3" id="O33" data-fuente="§7, §10.2"><span class="tt">2,250 micronegocios reciben capital semilla en especie</span><span class="tx">Equipo, herramientas e insumos, hasta $8,000 MXN por negocio, mínimo 100 por cohorte.</span></div>
-        <div class="node n3" id="O34" data-fuente="§7"><span class="tt">Infraestructura de seguimiento habilitada por estado</span><span class="tx">Landing pages y dashboards de Coppel Emprende, e informes finales de comprobación en el portal de aliados.</span></div>
-        <div class="band bt">Transversal</div>
-        <div class="node nt" id="OT1" data-fuente="§4 T.1, T.4"><span class="tt">Línea base común levantada y actualizada</span><span class="tx">Diagnósticos de ecosistema en diez ciudades intermedias (extendidos a ciudades nuevas) y re-diagnósticos al cierre que miden el avance de madurez de cada ciudad.</span></div>
-        <div class="node nt" id="OT2" data-fuente="§4 T.3, T.4"><span class="tt">Medición consolidada de la estrategia</span><span class="tx">Tabla única de indicadores desagregada por sexo, reportes de medio término y cierre, y learning briefs publicados y entregados a los actores locales.</span></div>
+        <div class="node n3" id="O31" data-fuente="§7; V5.7 KPIs"><span class="tt">21,000 micro-entrepreneurs enrolled in Coppel Emprende</span><span class="tx">Free training available nationwide; 16% complete the first level (41 lessons) — 3,360 trained businesses, the base from which each cohort selects.</span><span class="kpiwrap"><span class="kpi">KPI · 21,000 businesses supported directly</span><span class="kpi">KPI · 11,550 women-led (55%)</span></span></div>
+        <div class="node n3" id="O32" data-fuente="V5.7 Program Design; comment 11"><span class="tt">Visa module live: 30 lessons and 1,680 certified completers</span><span class="tx">10 lessons launched per year (5 new + 5 updated; 10/20/30 cumulative). 50% of the 3,360 trained complete the module on the three themes; the platform issues each certificate automatically.</span><span class="kpiwrap"><span class="kpi">KPI · 30 lessons developed and launched</span><span class="kpi">KPI · 1,680 module completers certified</span></span></div>
+        <div class="node n3" id="O33" data-fuente="§7; V5.7 KPIs"><span class="tt">18 state co-investment agreements signed</span><span class="tx">With 1:1 matched budgets committed and an executing NGO designated by each government (8/4/6 cohorts per year).</span><span class="kpiwrap"><span class="kpi">KPI · 18 state co-investment agreements</span></span></div>
+        <div class="node n3" id="O34" data-fuente="§7; V5.7 KPIs"><span class="tt">2,250 micro-businesses receive in-kind seed capital</span><span class="tx">Equipment, tools, and inputs, up to MXN $8,000 per business (Year 1: 1,000 / Year 2: 500 / Year 3: 750), verified in the executing NGO's beneficiary database.</span><span class="kpiwrap"><span class="kpi">KPI · 2,250 micro-businesses with in-kind seed capital</span></span></div>
+        <div class="node n3" id="O35" data-fuente="§7"><span class="tt">Follow-up infrastructure enabled per state</span><span class="tx">Coppel Emprende landing pages and dashboards, and final verification reports in the partner portal.</span></div>
+        <div class="band bt">Cross-component</div>
+        <div class="node nt" id="OT1" data-fuente="§4 T.1, T.4"><span class="tt">Common baseline established and updated</span><span class="tx">Ecosystem diagnostics in ten intermediate cities (extended to new cities) and closing re-diagnostics that measure each city's maturity gain.</span></div>
+        <div class="node nt" id="OT2" data-fuente="§4 T.3, T.4"><span class="tt">Consolidated measurement of the strategy</span><span class="tx">A single indicator table disaggregated by sex, mid-term and final reports, and learning briefs published and handed to local actors.</span></div>
       </div>
 
-      <div class="outcomes-group" id="col-outcomes">
-        <div class="colsub-band">Las intervenciones responden a problemas reales y enfocados en los sectores de mayor potencial de su región.</div>
-        <div class="outcomes-cols">
       <div class="col" id="col-r">
-        <div class="colhead">Outcomes a 3 años</div>
-        <div class="node nr" id="R1" data-fuente="§2 OE1, §3, §10.2"><span class="tt">Las organizaciones de apoyo acompañan a más y mejores emprendedores</span><span class="tx">Las 30 OAE fortalecidas elevan sus capacidades —medidas de línea base a cierre— y operan modelos de formación modernizados, medidos y financiables, listos para replicarse en ecosistemas más incipientes.</span><span class="kpiwrap"><span class="kpi">KPI · 30 OAE fortalecidas (SCALE), de línea base a cierre</span></span></div>
-        <div class="node nr" id="R2" data-fuente="§10.2"><span class="tt">Los emprendedores formados ponen en marcha negocios nuevos</span><span class="tx">1,500 emprendimientos inician operaciones a partir de los programas de formación financiados por la convocatoria.</span><span class="kpiwrap"><span class="kpi">KPI · 1,500 negocios nuevos creados (~500 por edición × 3)</span></span></div>
-        <div class="node nr" id="R3" data-fuente="§2 OE2, §3"><span class="tt">Los actores de cada ciudad trabajan articulados en torno a una agenda común</span><span class="tx">Se apropian de los datos del diagnóstico, co-crean la solución a los retos y debilidades de su ecosistema y la sostienen en operación; los participantes conservan la red y la capacidad de diseño para seguir colaborando.</span><span class="kpiwrap"><span class="kpi">KPI · 12 laboratorios facilitados hasta una solución financiada</span></span></div>
-        <div class="node nr" id="R4" data-fuente="§3, §10.2"><span class="tt">El ecosistema moviliza y compromete capital local</span><span class="tx">Los aliados de las organizaciones aportan contraparte de dos a uno o más en el Componente 1, los actores del ecosistema y los gobiernos aportan uno a uno en los Componentes 2 y 3, y esa inversión local empieza a convertirse en negocios en el territorio.</span><span class="kpiwrap"><span class="kpi">KPI · Contraparte movilizada: ≥2:1 en C1 · 1:1 en C2 y C3</span><span class="kpi">KPI · 18 convenios estatales de coinversión</span></span></div>
-        <div class="node nr" id="R5" data-fuente="§2 OE3, §3"><span class="tt">Los micronegocios mejoran su gestión y su productividad</span><span class="tx">Con capacitación aplicada y un primer capital productivo en especie, mejoran sus procesos, avanzan hacia la formalización y crecen.</span><span class="kpiwrap"><span class="kpi">KPI · 21,000 negocios apoyados directamente (11,550 liderados por mujeres)</span><span class="kpi">KPI · 2,250 micronegocios con capital semilla en especie</span></span></div>
-        <div class="node nr" id="R6" data-fuente="§10.1"><span class="tt">Los negocios apoyados incrementan sus ventas 15% en promedio</span><span class="tx">Medido antes y después de cada intervención.</span><span class="kpiwrap"><span class="kpi">KPI · 15% de crecimiento en ventas, promedio de todos los componentes</span></span></div>
-        <div class="node nr" id="R7" data-fuente="§10.1"><span class="tt">Los negocios generan ingreso y empleo, con participación de las mujeres</span><span class="tx">52,500 empleos en los negocios apoyados directamente (incluido el autoempleo) y 7,500 en los indirectos; la mitad ocupados por mujeres, y los negocios liderados por mujeres alcanzan el 55% de los directos y el 50% de los indirectos.</span><span class="kpiwrap"><span class="kpi">KPI · 52,500 empleos directos (26,250 ocupados por mujeres)</span><span class="kpi">KPI · 7,500 empleos indirectos (3,750 ocupados por mujeres)</span><span class="kpi">KPI · 1,875 negocios indirectos (938 liderados por mujeres)</span></span></div>
+        <div class="colhead">3-Year Outcomes</div>
+        <div class="node nr" id="R1" data-fuente="§2 OE1, §3; V5.7"><span class="tt">Support organizations serve more and better entrepreneurs</span><span class="tx">The 30 strengthened ESOs raise their capabilities — measured from baseline to close — and operate modernized, measured, fundable training models, ready to replicate in earlier-stage ecosystems.</span><span class="kpiwrap"><span class="kpi">KPI · 30 ESOs strengthened (SCALE), baseline to close</span></span></div>
+        <div class="node nr" id="R1b" data-fuente="§5; track record 2024/2025"><span class="tt">Entrepreneurs trained through ESO programs start and grow businesses</span><span class="tx">The Track 1 training programs put trained entrepreneurs in a position to launch and grow ventures, as they did in the strategy’s first editions; venture creation is documented through ESO reporting, without a numerical target.</span></div>
+        <div class="node nr" id="R2" data-fuente="§2 OE2, §3"><span class="tt">The actors of each city work as a coordinated ecosystem</span><span class="tx">They own the diagnostic data, co-create the solution to their ecosystem's challenges and weaknesses, and keep it in operation; participants retain the network and the design capability to keep collaborating.</span></div>
+        <div class="node nr" id="R3" data-fuente="§3; V5.7"><span class="tt">The ecosystem mobilizes and commits local capital</span><span class="tx">ESO allies match 1:1 in Component 1, ecosystem actors match 1:1 in each Action Lab, and state governments match 1:1 in every seed-capital cohort — local investment that starts converting into businesses in the territory.</span><span class="kpiwrap"><span class="kpi">KPI · 1:1 counterpart verified in every funded project</span></span></div>
+        <div class="band bo">Cross-cutting objectives</div>
+        <div class="node no" id="R4" data-fuente="V5.7 other indicators (15-jul)"><span class="tt">SMBs digitalize their operations</span><span class="tx">Micro-businesses that complete the digitization module adopt digital tools and payment methods and strengthen basic cybersecurity practices.</span><span class="kpiwrap"><span class="kpi">KPI · 1,000 with ≥1 digital payment method (60% of completers)</span><span class="kpi">KPI · 1,250 with improved digitalization knowledge</span><span class="kpi">KPI · 1,250 with improved cybersecurity knowledge</span></span></div>
+        <div class="node no" id="R5" data-fuente="V5.7 other indicators (15-jul)"><span class="tt">SMBs access financial products and capital</span><span class="tx">Micro-businesses that complete the financial products module connect to formal financial services, and seed-capital recipients receive their first productive capital in kind.</span><span class="kpiwrap"><span class="kpi">KPI · 850 with ≥1 formal financial product within 6 months</span><span class="kpi">KPI · 1,250 with improved financial products knowledge</span><span class="kpi">KPI · 2,250 with in-kind seed capital</span></span></div>
+        <div class="node no" id="R6" data-fuente="V5.7 other indicators (15-jul)"><span class="tt">SMBs formalize their businesses</span><span class="tx">Seed-capital recipients (Component 3) and businesses supported by ESO programs (Component 1) complete, or move toward, SAT/RFC/RESICO registration within 6 months of the program.</span><span class="kpiwrap"><span class="kpi">KPI · 600 complete registration (450 C3 + 150 C1)</span><span class="kpi">KPI · 340 in process · 450 intend to start</span><span class="kpi">KPI · 1,250 with improved formalization knowledge</span></span></div>
+        <div class="node nr" id="R7" data-fuente="V5.7 KPIs"><span class="tt">Supported businesses grow their sales 10% on average</span><span class="tx">Measured pre/post on the seed-capital and ESO cohorts.</span><span class="kpiwrap"><span class="kpi">KPI · 10% average revenue growth, measured pre/post</span></span></div>
+        <div class="node nr" id="R8" data-fuente="V5.7 KPIs"><span class="tt">Businesses sustain income and jobs, with women's participation</span><span class="tx">~63,300 jobs sustained: 52,500 in directly supported businesses (including self-employment) and 10,800 in the 2,700 indirectly supported ones; women hold half of the jobs, and women-led businesses reach 55% of direct and 50% of indirect.</span><span class="kpiwrap"><span class="kpi">KPI · 52,500 direct jobs (26,250 held by women)</span><span class="kpi">KPI · 10,800 indirect jobs (5,400 held by women)</span><span class="kpi">KPI · 2,700 indirect businesses (1,350 women-led)</span></span></div>
       </div>
 
       <div class="col" id="col-l">
-        <div class="colhead">Outcomes de largo plazo</div>
-        <div class="node nr" id="L1" data-fuente="§2 OE1"><span class="tt">Las organizaciones conservan la capacidad instalada después del recurso</span><span class="tx">Y continúan acompañando emprendedores sin depender de la subvención.</span></div>
-        <div class="node nr" id="L2" data-fuente="§2 OE2, §3"><span class="tt">El ecosistema de cada ciudad reduce la asimetría de información</span><span class="tx">La que encarecía y arriesgaba invertir; retiene y reinvierte su capital: la inversión se convierte en negocios en el territorio.</span></div>
-        <div class="node nr" id="L3" data-fuente="§4, T.4"><span class="tt">Los actores locales quedan como dueños del trabajo de su ecosistema</span><span class="tx">Y cada ciudad avanza de nivel de madurez, medido por el re-diagnóstico de cierre.</span></div>
-        <div class="node nr" id="L4" data-fuente="§2"><span class="tt">Las ciudades cuentan con ecosistemas autosostenibles</span><span class="tx">Capaces de crear y hacer crecer sus propios negocios.</span></div>
-      </div>
-        </div>
+        <div class="colhead">Long-Term Outcomes</div>
+        <div class="node nr" id="L1" data-fuente="§2 OE1"><span class="tt">Organizations keep their installed capacity after the grant</span><span class="tx">And continue supporting entrepreneurs without depending on the subsidy.</span></div>
+        <div class="node nr" id="L2" data-fuente="§2 OE2, §3"><span class="tt">Each city's ecosystem reduces its information asymmetry</span><span class="tx">The asymmetry that made investing costly and risky; the ecosystem retains and reinvests its capital, and investment converts into businesses in the territory.</span></div>
+        <div class="node nr" id="L3" data-fuente="§4, T.4"><span class="tt">Local actors own the work of their ecosystem</span><span class="tx">And each city advances in maturity level, measured by the closing re-diagnostic.</span></div>
+        <div class="node nr" id="L4" data-fuente="§2; V5.7 closing"><span class="tt">Cities sustain self-supporting, inclusive ecosystems</span><span class="tx">Capable of creating and growing their own businesses, with a more formal, digital, and financially integrated business base.</span></div>
       </div>
 
       <div class="col" id="col-g">
-        <div class="colhead">Impacto</div>
-        <div class="node ng impact" id="IMP" data-fuente="§2, §3"><span class="tt">Impacto</span><span class="tx">Más personas en México acceden a oportunidades de movilidad social y mejoran sus condiciones de vida a través del emprendimiento — los emprendedores y los microempresarios y, a través de ellos, sus familias y comunidades.</span></div>
+        <div class="colhead">Impact</div>
+        <div class="node ng impact" id="IMP" data-fuente="§2, §3"><span class="tt">Impact</span><span class="tx">More people in Mexico access opportunities for social mobility and improve their living conditions through entrepreneurship — entrepreneurs and micro-business owners and, through them, their families and communities.</span></div>
       </div>
 
     </div>
@@ -252,7 +254,7 @@
   <div id="panel"><button class="cls" id="panelClose">×</button><h3 id="panelTitle"></h3><p id="panelBody"></p><div id="panelKpis"></div></div>
 
   <footer class="foot">
-    Estrategia de Emprendimiento (Fundación Coppel · ANDE) · Teoría de cambio, cadena causal completa · Elaborada a partir del Documento madre V3 (v0.6, julio 2026), única fuente; sin contenidos inferidos. Los supuestos de cada enlace y el manejo de riesgos se desarrollan en las Secciones 3 y 11 del documento madre.
+    Entrepreneurship Strategy (Fundación Coppel · ANDE) · Theory of change, full causal chain · English version for Visa Foundation, July 2026 · Built from the Grantee Questionnaire V5.7 (canonical source, incl. reviewer feedback) and the master strategy document. Assumptions behind each link and risk management are developed in the questionnaire's Risks section and the master document (§3, §11).
   </footer>
 
 </div>
@@ -260,21 +262,22 @@
 <script>
 (function(){
   var EDGES = [
-    ["I1","A1a"],["I1","A2c"],["I1","A3b"],["I1","AT2"],
-    ["I2","A3b"],
+    ["I1","A1a"],["I1","A2c"],["I1","A3c"],["I1","AT2"],
+    ["I2","A3c"],
     ["I3","A1a"],["I3","A2c"],
     ["I4","AT1"],["I4","A1d"],["I4","A2a"],["I4","A2b"],["I4","AT3"],["I4","AT4"],
-    ["I5","A3a"],["I5","A1d"],
-    ["I6","A1a"],["I6","A3b"],["I6","A3d"],["I6","AT2"],
+    ["I5","A3a"],["I5","A3b"],["I5","A1d"],
+    ["I6","A1a"],["I6","A3c"],["I6","A3e"],["I6","AT2"],
     ["A1a","O11"],["A1b","O12"],["A1c","O13"],["A1d","O14"],
     ["A2a","O21"],["A2b","O22"],["A2b","O23"],["A2c","O22"],["A2d","O22"],["A2d","O23"],
-    ["A3a","O31"],["A3b","O32"],["A3c","O33"],["A3d","O34"],
-    ["AT1","OT1"],["AT2","O11"],["AT2","O22"],["AT2","O32"],["AT3","OT2"],["AT4","OT1"],["AT4","OT2"],
-    ["O11","R1"],["O11","R4"],["O12","R2"],["O12","R6"],["O13","R1"],["O14","R1"],["O14","R6"],["O14","R7"],
-    ["O21","R3"],["O22","R3"],["O22","R4"],["O22","R6"],["O22","R7"],["O23","R3"],
-    ["O31","R5"],["O31","R7"],["O32","R4"],["O33","R5"],["O33","R6"],["O33","R7"],["O34","R5"],
-    ["OT1","R3"],["OT2","R6"],
-    ["R1","L1"],["R2","L4"],["R3","L2"],["R3","L3"],["R4","L2"],["R5","L4"],["R6","L4"],["R7","IMP"],
+    ["A3a","O31"],["A3b","O32"],["A3c","O33"],["A3d","O34"],["A3e","O35"],
+    ["AT1","OT1"],["AT2","O11"],["AT2","O22"],["AT2","O33"],["AT3","OT2"],["AT4","OT1"],["AT4","OT2"],
+    ["O11","R1"],["O11","R3"],["O12","R7"],["O12","R1b"],["O12","R6"],["O13","R1"],["O14","R1"],["O14","R6"],["O14","R7"],["O14","R8"],
+    ["O21","R2"],["O22","R2"],["O22","R3"],["O22","R4"],["O22","R5"],["O22","R6"],["O22","R7"],["O22","R8"],["O23","R2"],
+    ["O31","R8"],["O32","R4"],["O32","R5"],["O32","R6"],
+    ["O33","R3"],["O34","R5"],["O34","R6"],["O34","R7"],["O34","R8"],["O35","R7"],
+    ["OT1","R2"],["OT2","R7"],
+    ["R1","L1"],["R1b","L4"],["R2","L2"],["R2","L3"],["R3","L2"],["R4","L4"],["R5","L4"],["R6","L4"],["R7","L4"],["R8","IMP"],
     ["L1","IMP"],["L2","IMP"],["L3","IMP"],["L4","IMP"]
   ];
   var COLOR = {I:"#9db2c2",A1:"#18B0DE",A2:"#e0a41f",A3:"#074B7C",AT:"#7d6fae",O1:"#18B0DE",O2:"#e0a41f",O3:"#074B7C",OT:"#7d6fae",R:"#074B7C",L:"#074B7C"};
@@ -354,7 +357,15 @@
   tgl.addEventListener("click",function(ev){
     ev.stopPropagation();
     document.querySelector(".sheet").classList.toggle("showdesc");
-    tgl.textContent = document.querySelector(".sheet").classList.contains("showdesc") ? "Ocultar descripciones" : "Mostrar descripciones";
+    tgl.textContent = document.querySelector(".sheet").classList.contains("showdesc") ? "Hide descriptions" : "Show descriptions";
+    draw(); if(current){ var n=document.getElementById(current); if(n) select(n); }
+  });
+
+  var tglK=document.getElementById("toggleKpi");
+  tglK.addEventListener("click",function(ev){
+    ev.stopPropagation();
+    document.querySelector(".sheet").classList.toggle("showkpi");
+    tglK.textContent = document.querySelector(".sheet").classList.contains("showkpi") ? "Hide KPIs" : "Show KPIs";
     draw(); if(current){ var n=document.getElementById(current); if(n) select(n); }
   });
 
